@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>דף נחיתה תוך 24 שעות</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="preload" as="fetch" href="https://res.cloudinary.com" crossorigin>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        :root {
+            --primary-color: #23d5ab;
+            --secondary-color: #23a6d5;
+            --header-height: calc(60px + env(safe-area-inset-top, 0));
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            height: -webkit-fill-available;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            direction: rtl;
+            color: #fff;
+            background: #000;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+
+        .sticky-header {
+            position: fixed;
+            top: env(safe-area-inset-top, 0);
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 15px;
+            padding-top: calc(8px + env(safe-area-inset-top, 0));
+            z-index: 100;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 480px) {
+            .sticky-header {
+                flex-direction: column;
+                padding: 10px;
+                gap: 8px;
+            }
+
+            .sticky-header .logo {
+                margin-bottom: 5px;
+                font-size: 1.1em;
+            }
+
+            .sticky-header nav {
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .sticky-header nav a {
+                font-size: 0.85em;
+                padding: 6px 10px;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding-top: calc(120px + env(safe-area-inset-top, 0));
+            }
+        }
+
+        .sticky-header .logo {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(35,213,171,0.1);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .sticky-header .logo:hover {
+            text-shadow: 0 0 10px rgba(35,213,171,0.5);
+            background: rgba(35,213,171,0.15);
+            transform: translateY(-1px);
+        }
+
+        .sticky-header nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sticky-header nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-weight: 500;
+            position: relative;
+            background: linear-gradient(45deg, rgba(35,213,171,0.1), rgba(35,166,213,0.1));
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(35,213,171,0.1);
+            white-space: nowrap;
+        }
+
+        .sticky-header nav a:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(45deg, rgba(35,213,171,0.2), rgba(35,166,213,0.2));
+            box-shadow: 0 0 20px rgba(35,213,171,0.2);
+            color: var(--primary-color);
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            text-align: center;
+            padding: 20px;
+            padding-top: max(140px, calc(120px + env(safe-area-inset-top, 0)));
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+            margin-bottom: 60px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 30px auto;
+            max-width: 600px;
+            line-height: 1.4;
+            padding: 0 15px;
+        }
+
+        .cta-button {
+            background: #23d5ab;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(35, 213, 171, 0.4);
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 1.1em;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cards-section {
+            position: relative;
+            background: rgba(0,0,0,0.92);
+            padding: 40px 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .cards-section h2 {
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 200px;
+            perspective: 1000px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0;
+        }
+
+        .flip-card-front h3 {
+            color: var(--primary-color);
+            font-size: 1.6em;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background: rgba(35, 213, 171, 0.1);
+        }
+
+        .flip-card-back p {
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .flip-card-back a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .flip-card-back a:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-header {
+                padding: 10px 15px;
+                padding-top: calc(10px + env(safe-area-inset-top, 0));
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 1em;
+            }
+
+            .cards {
+                padding: 10px;
+            }
+        }
+
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                padding-top: max(70px, calc(50px + env(safe-area-inset-top, 0)));
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+                margin: 10px auto;
+            }
+
+            .cta-button {
+                padding: 12px 24px;
+                margin-top: 10px;
+            }
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* סגנון לסקשנים של זכוכית */
+        .glass-section {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin: 20px;
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        @keyframes rotate3D {
+            from { transform: perspective(1000px) rotateY(0deg); }
+            to { transform: perspective(1000px) rotateY(360deg); }
+        }
+
+        .rotate {
+            display: inline-block;
+            animation: rotate3D 5s linear infinite;
+        }
+
+        /* סגנון עבור preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #preloader .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* סגנון מיוחד לפרויקט 5 */
+        #project5-image {
+            object-position: 0% 50%;
+        }
+
+        /* עיצוב רקע העמוד */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .video-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .video-background img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* אופטימיזציות ביצועים כלליות */
+        .flip-card-front, .flip-card-back, .logo-container img, .animated-project-image {
+            will-change: transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div class="video-background">
+        <img src="https://res.cloudinary.com/doc4ao6oz/image/upload/v1741886826/effect_cube_video_tujepm.jpg" alt="רקע" class="background-image">
+    </div>
+
+    <header class="sticky-header">
+        <div class="logo">העסק שלך</div>
+        <nav>
+            <a href="#portfolio">עבודות</a>
+            <a href="#about-us">למה אנחנו</a>
+            <a href="#contact-us">צור קשר</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1><span class="typing"></span></h1>
+            <p>דף נחיתה תוך 24 שעות - מקצועי, מהיר ומותאם אישית</p>
+            <a href="https://wa.me/+972501234567" class="cta-button pulse">דברו איתנו עכשיו</a>
+        </section>
+
+        <section id="portfolio" class="cards-section">
+            <h2>עבודות נבחרות</h2>
+            <div class="cards">
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741886826/effect_cube_video_tujepm.jpg" alt="דף נחיתה מעוצב" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה מעוצב</p>
+                            <a href="https://lp6.me/HYgUG" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741887384/2_m9wo8v.jpg" alt="דף נחיתה מותאם אישית" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה מותאם אישית</p>
+                            <a href="https://lp6.me/Tsysy" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741888868/3_gc5zov.jpg" alt="אתר וויקס" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה מקצועי</p>
+                            <a href="https://lp6.me/oWuLz" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741887165/4_isz1we.jpg" alt="דף נחיתה לעסק" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה עסקי</p>
+                            <a href="https://lp6.me/9IhXo" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://res.cloudinary.com/doc4ao6oz/image/upload/v1741888442/IMG-20250312-WA0100_xtgmcq.jpg" alt="פרויקט 5" id="project5-image" loading="lazy">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה מכירתי</p>
+                            <a href="https://lp6.me/PwDhv" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741887674/3_dspex5.jpg" alt="פרויקט 6" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה מרשים</p>
+                            <a href="https://lp6.me/VkQFy" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741891045/7_zorgzc.jpg" alt="פרויקט 7" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה חדשני</p>
+                            <a href="https://lp6.me/THB48" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741890538/8_hrmoma.jpg" alt="פרויקט 8" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה ייחודי</p>
+                            <a href="https://lp6.me/5aGI1" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741891385/9_h1amgy.jpg" alt="פרויקט 9" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה מתקדם</p>
+                            <a href="https://lp6.me/ijY1T" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="animated-image-container">
+                                <img src="https://res.cloudinary.com/doc4ao6oz/video/upload/v1741896100/10_am9mle.jpg" alt="פרויקט 10" class="animated-project-image">
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>דף נחיתה איכותי</p>
+                            <a href="https://lp6.me/6okH9" target="_blank">צפייה</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="glass-section">
+            <h2 class="rotate">למה לבחור בנו?</h2>
+            <div class="benefits">
+                <div>🚀 מהירות: תוך 24 שעות אצלך</div>
+                <div>🎯 מקצועיות: עיצוב שמייצר תוצאות</div>
+                <div>🤝 שירות: ליווי אישי עד לתוצאה</div>
+            </div>
+        </section>
+
+        <section id="contact-us" class="glass-section">
+            <h2 class="rotate">רוצה להתחיל?</h2>
+            <a href="https://wa.me/+972501234567" class="cta-button">בוא נדבר עכשיו</a>
+        </section>
+    </main>
+
+    <footer>
+        כל הזכויות שמורות &copy; 2025
+    </footer>
+
+    <script>
+        // סקריפט להתאמת גובה האפליקציה
+        const setAppHeight = () => {
+            document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+        };
+        window.addEventListener('resize', setAppHeight);
+        setAppHeight();
+
+        // אנימציה לחלקים בדף
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0px)';
+                    entry.target.style.transition = 'all 0.7s ease';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.glass-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            observer.observe(section);
+        });
+
+        // סקריפט לטקסט הרץ
+        (function() {
+            const texts = ["דף נחיתה תוך 24 שעות", "שירות אמין ומקצועי", "דף שמוכר!"];
+            let count = 0;
+            let index = 0;
+            let currentText = "";
+            let letter = "";
+
+            // בדיקה שהדף נטען לגמרי לפני שמתחילים אנימציה
+            function initTyping() {
+                const typingElement = document.querySelector(".typing");
+                
+                if (!typingElement) {
+                    console.error("אלמנט .typing לא נמצא");
+                    return;
+                }
+
+                function type() {
+                    try {
+                        if (count === texts.length) {
+                            count = 0;
+                        }
+                        currentText = texts[count];
+                        letter = currentText.slice(0, ++index);
+
+                        typingElement.textContent = letter;
+                        if (letter.length === currentText.length) {
+                            count++;
+                            index = 0;
+                            setTimeout(type, 2000);
+                        } else {
+                            setTimeout(type, 150);
+                        }
+                    } catch (error) {
+                        console.error("שגיאה באנימציית הטקסט:", error);
+                    }
+                }
+
+                // הפעל את האנימציה
+                type();
+            }
+
+            // הוסף האזנה לאירוע DOMContentLoaded
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initTyping);
+            } else {
+                // אם ה-DOM כבר נטען
+                setTimeout(initTyping, 100);
+            }
+        })();
+
+        // קוד לאיתור מכשירי iOS וטיפול מיוחד בהם
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+
+        // סקריפט להסרת preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        });
+
+        // סקריפט לתיקון בעיית הרענון באייפון והצגת URL
+        (function() {
+            function handleRedirectIssue() {
+                // בדוק אם התוכן הנוכחי הוא רק URL
+                const bodyText = document.body.innerText || '';
+                if (bodyText.trim().startsWith('https://') && bodyText.includes('lp.landing-page.mobi')) {
+                    console.log('זוהתה בעיית URL בטעינה, מנסה לתקן...');
+                    // הסתר את הטקסט
+                    document.body.innerHTML = '<div id="loading-fix">טוען...</div>';
+                    // טען מחדש את הדף
+                    setTimeout(function() {
+                        window.location.reload(true);
+                    }, 100);
+                }
+            }
+            
+            // הרץ את הבדיקה כשהמסמך טעון
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(handleRedirectIssue, 500);
+            } else {
+                document.addEventListener("DOMContentLoaded", function() {
+                    setTimeout(handleRedirectIssue, 500);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
