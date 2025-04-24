@@ -1,0 +1,4728 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" itemscope itemtype="https://schema.org/WebPage" id="htmlRoot">
+<!--
+שיפורים:
+- תגיות SEO מתקדמות (title, description, og:title, og:description, twitter:title, twitter:description) מתעדכנות אוטומטית לפי השפה
+- בסיס לנגישות: alt מתורגם לכל תמונה, aria-label דינמי לכפתורים חשובים
+- כל קישור חיצוני (target="_blank") כולל rel="noopener noreferrer"
+- כל אלמנט מרכזי מסומן כ-translatable עם data-key
+- הערות קוד למפתחים להמשך עבודה
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="VIPO יבוא חכם מסין">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VIPO יבוא מסין | שירות חכם לעסקים">
+<meta name="twitter:description" content="שירותי יבוא מסין עם ליווי אישי – איתור ספקים, בדיקות איכות, משלוחים, ביטחון לכסף">
+<meta name="twitter:image" content="https://vipoconnect.github.io/6/og-image.jpg">
+    <meta name="theme-color" content="#0055aa">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- קישור לספריית Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- קישור לספריית Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- SEO Meta Tags -->
+    <title>יבוא מסין | שירותי יבוא חכם מסין לעסקים | VIPO</title>
+    <meta name="description" content="VIPO מתמחים ביבוא מסין לעסקים – איתור מוצרים, בדיקת ספקים, משלוחים, עמילות מכס וביטחון לכסף. שירות יבוא חכם מסין מא' ועד ת'.">
+    <meta name="keywords" content="יבוא מסין, יבוא, אתר יבוא, סין יבוא, יבוא מסין לעסקים, שילוח מסין, מיסים ביבוא, עמילות מכס, בדיקת מפעלים בסין, יבוא חכם, import from China, china import, smart import">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="VIPO יבוא מסין | שירות חכם לעסקים">
+    <meta property="og:description" content="שירותי יבוא מסין עם ליווי אישי – איתור ספקים, בדיקות איכות, משלוחים, ביטחון לכסף">
+    <meta property="og:image" content="https://vipoconnect.github.io/6/og-image.jpg">
+    <meta property="og:url" content="https://vipoconnect.github.io/6/">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://vipoconnect.github.io/6/">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "VIPO יבוא חכם",
+      "url": "https://vipoconnect.github.io/6/",
+      "description": "יבוא מסין לעסקים – ליווי מלא, איתור ספקים, בדיקות איכות, שילוח ועמילות מכס.",
+      "telephone": "+972-58-700-9938",
+      "areaServed": ["Israel", "China"],
+      "makesOffer": [
+        {
+          "@type": "Service",
+          "name": "יבוא מסין",
+          "description": "שירות כולל של יבוא חכם מסין לעסקים."
+        }
+      ]
+    }
+    </script>
+    <style>
+        /* סגנונות בסיסיים */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0055aa, #003366, #0088cc);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            direction: rtl;
+            position: relative;
+        }
+        
+        /* הוספת דפוס סיני מסורתי */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* כפתורי החלפת שפה במיקום חדש - למעלה */
+        .language-switcher-top {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #005cb9;
+            padding: 6px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lang-name {
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .lang-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        /* סגנון כפתורי דגלים */
+        .flag-btn {
+            padding: 0;
+            margin: 0 3px;
+        }
+        
+        .home-icon {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        
+        .home-icon:hover {
+            opacity: 0.9;
+        }
+        
+        .flag-icon {
+            width: 32px;
+            height: auto;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .lang-btn:hover {
+            opacity: 0.85;
+        }
+        
+        .lang-btn.active {
+            box-shadow: 0 0 0 1px white;
+        }
+        
+        /* התאמה למובייל */
+        @media (max-width: 768px) {
+            .language-switcher-top {
+                padding: 4px 10px;
+            }
+            
+            .lang-group {
+                gap: 10px;
+            }
+            
+            .flag-icon {
+                width: 28px;
+            }
+            
+            .lang-name {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .lang-group {
+                gap: 5px;
+            }
+            
+            .lang-btn {
+                padding: 3px 5px;
+            }
+            
+            .flag-icon {
+                width: 24px;
+            }
+            
+            .lang-name {
+                font-size: 11px;
+            }
+        }
+
+        /* התאמה למצב LTR (אנגלית) */
+        html[dir="ltr"] .language-switcher {
+            right: auto;
+            left: 20px;
+        }
+        
+        /* מחשבון עלויות שילוח */
+        .calculator-section {
+            margin: 20px auto;
+            max-width: 650px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, rgba(0, 40, 80, 0.7), rgba(0, 60, 100, 0.7));
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 216, 0, 0.7), transparent);
+        }
+
+        .calculator-section h2 {
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 6px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .calculator-section h2::before {
+            content: "\f1ec";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #ffcc00;
+        }
+
+        .calculator-section p {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #e6e6e6;
+            font-size: 0.9em;
+        }
+
+        .calculator-container {
+            border-radius: 6px;
+            padding: 6px;
+            text-align: center;
+        }
+
+        .calculator-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #005cb9, #0088cc);
+            color: white;
+            padding: 7px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .calculator-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 92, 185, 0.4);
+            background: linear-gradient(45deg, #0088cc, #005cb9);
+        }
+        
+        .calculator-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* עיצוב הפוטר החדש - גלי עם מפה */
+        .footer-new {
+            position: relative;
+            margin-top: 100px;
+            background: #002544;
+            color: white;
+            overflow: hidden;
+        }
+        
+        /* גלים */
+        .wave-container {
+            position: relative;
+            height: 80px;
+            width: 100%;
+            margin-top: -80px;
+        }
+        
+        .waves {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-bottom: -7px;
+        }
+        
+        .parallax > use {
+            animation: wave-move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        }
+        
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
+        
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
+        
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+        
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+        
+        @keyframes wave-move-forever {
+            0% {
+                transform: translate3d(-90px, 0, 0);
+            }
+            100% {
+                transform: translate3d(85px, 0, 0);
+            }
+        }
+
+        /* תוכן הפוטר */
+        .footer-content {
+            position: relative;
+            background-color: #00395d;
+            padding: 50px 0 30px;
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin: 15px;
+        }
+
+        .footer-heading {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #0095ff, #00ffb3);
+        }
+        
+        /* פרטי יצירת קשר */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            margin-left: 10px;
+            color: #4db8ff;
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+        
+        html[dir="ltr"] .contact-icon {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+        
+        .contact-label {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        html[dir="ltr"] .contact-label {
+            margin-left: 0;
+            margin-right: 5px;
+        }
+        
+        .contact-list a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-list a:hover {
+            color: #4db8ff;
+        }
+        
+        /* מפה */
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .world-map {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 10px 0;
+            opacity: 0.7;
+        }
+        
+        /* אייקון וואטסאפ ריאליסטי */
+        .realistic-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            text-decoration: none;
+            user-select: none;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            animation: whatsapp-pulse 2s infinite;
+            transition: transform 0.2s;
+        }
+        
+        html[dir="ltr"] .realistic-whatsapp {
+            left: auto;
+            right: 20px;
+        }
+        
+        .realistic-whatsapp:hover {
+            transform: translateY(-5px) scale(1.05);
+            filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.3));
+        }
+        
+        .realistic-whatsapp-icon {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .realistic-whatsapp-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #25D366;
+            border-radius: 50%;
+            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .realistic-whatsapp-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.2.3-.767.966-.94 1.164-.173.199-.347.223-.647.074-.3-.15-1.269-.468-2.419-1.491-.896-.795-1.497-1.77-1.676-2.07-.169-.3-.018-.46.127-.61.146-.133.3-.346.448-.52.149-.174.2-.298.3-.497.099-.198.05-.371-.025-.519-.075-.149-.672-1.606-.922-2.206-.242-.552-.487-.52-.672-.53-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.796.372-.273.297-1.04 1.016-1.04 2.48 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.489.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.571-.347m-5.485 7.346h-.015a9.826 9.826 0 0 1-5.001-1.378l-.361-.214-3.741.982.95-3.468-.233-.374A9.806 9.806 0 0 1 2.037 12a9.779 9.779 0 0 1 10.02-9.778c2.68.03 5.202 1.092 7.09 2.997 1.889 1.904 2.929 4.43 2.95 7.134-.022 5.392-4.405 9.794-9.84 9.794M19.94 4.944C17.704 2.69 14.746 1.435 11.619 1.4 5.356 1.4.267 6.442.262 12.64c-.002 2.078.543 4.11 1.578 5.9L0 24l5.586-1.464a11.91 11.91 0 0 0 5.689 1.455c6.265 0 11.352-5.041 11.358-11.242.002-3.005-1.167-5.827-3.293-7.952'/%3E%3C/svg%3E") no-repeat center center; 
+            background-size: 100%;
+        }
+        
+        .realistic-whatsapp-tooltip {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        
+        .realistic-whatsapp:hover .realistic-whatsapp-tooltip {
+            opacity: 1;
+            bottom: 75px;
+        }
+        
+        @keyframes whatsapp-pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 57, 93, 0.4);
+            border-radius: 8px;
+        }
+        
+        .pin {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ff6b6b;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        
+        .israel-pin {
+            top: 43%;
+            left: 55%;
+            background: #4db8ff;
+        }
+        
+        .china-pin {
+            top: 40%;
+            left: 78%;
+            background: #ff6b6b;
+        }
+        
+        .pin-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+            opacity: 0.8;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.8;
+            }
+            70% {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .route-line {
+            position: absolute;
+            top: 43%;
+            left: 55%;
+            width: 23%;
+            height: 3px;
+            background: linear-gradient(to right, #4db8ff, #ff6b6b);
+            transform: rotate(-5deg);
+            transform-origin: left center;
+            border-radius: 3px;
+            z-index: 1;
+        }
+        
+        .route-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            top: 60%;
+            left: 28%;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            z-index: 3;
+        }
+        
+        /* קישורים מהירים */
+        .quick-links {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+        
+        .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .quick-links a:hover {
+            color: #4db8ff;
+            transform: translateX(-5px);
+        }
+        
+        html[dir="ltr"] .quick-links a:hover {
+            transform: translateX(5px);
+        }
+        
+        /* אייקונים חברתיים */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .linkedin {
+            background: linear-gradient(45deg, #0077b5, #00a0dc);
+        }
+        
+        .instagram {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        
+        .facebook {
+            background: linear-gradient(45deg, #3b5998, #4c6bba);
+        }
+        
+        /* Copyright */
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* כפתור חזרה למעלה */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #0088cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, background 0.3s, transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            background: #00aaff;
+            transform: translateY(-3px);
+        }
+        
+        html[dir="ltr"] .back-to-top {
+            right: auto;
+            left: 20px;
+        }
+        
+        /* התאמה למובייל */
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+            }
+            
+            .footer-col {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .wave-container {
+                height: 60px;
+                margin-top: -60px;
+            }
+            
+            .world-map {
+                height: 150px;
+            }
+        }
+        
+        .calculator-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #0066cc, #0099ff);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .calculator-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #0077dd, #00aaff);
+        }
+        
+        .calculator-icon {
+            margin-left: 10px;
+            font-style: normal;
+        }
+        
+        html[dir="ltr"] .calculator-icon {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    </style>
+    
+    <!-- תמיכה רב-לשונית באתר - עברית, אנגלית וסינית -->
+    <script>
+        // אובייקט התרגומים - מכיל את כל הטקסטים באתר בעברית, אנגלית וסינית
+        const translations = {
+            // תרגומים בעברית
+            he: {
+                // תגיות מטא
+                meta: {
+                    title: "יבוא מסין | שירותי יבוא חכם מסין לעסקים | VIPO",
+                    description: "VIPO מתמחים ביבוא מסין לעסקים – איתור מוצרים, בדיקת ספקים, משלוחים, עמילות מכס וביטחון לכסף. שירות יבוא חכם מסין מא' ועד ת'.",
+                },
+                // ממשק משתמש
+                ui: {
+                    langSwitcher: "English",
+                    whatsapp: "צור קשר בוואטסאפ",
+                    whatsappIcon: "אייקון וואטסאפ",
+                    catalogButton: "📂 לקטלוגים",
+                    closeCatalog: "סגור"
+                },
+                // כותרת
+                header: {
+                    slogan: "פתרונות יבוא מתקדמים"
+                },
+                // מבוא
+                intro: {
+                    title: "יבוא חכם – הצלחה בטוחה!",
+                    paragraph1: "חברת <strong>VIPO</strong> מספקת שירותי ייבוא בהתאמה אישית שיחסכו לך זמן וכסף.<br>חברתנו מנגישה את אפשרות היבוא מול מפעלים מובילים בעולם, התהליך מהיר ופשוט, הליווי אישי ומותאם לפי צורך, הלקוח שלנו נהנה מהנגשה למוצרים טובים ובמחירים משתלמים.",
+                    highlight: "📦 איתנו זה אפשרי!"
+                },
+                // מחשבון עלויות שילוח
+                calculator: {
+                    title: "מחשבון עלויות שילוח",
+                    description: "חשב מראש את עלויות השילוח, המיסים והמכס",
+                    openButton: "פתח מחשבון עלויות"
+                },
+                // קטלוג
+                catalog: {
+                    title: "קטלוגים",
+                    furniture: "ריהוט",
+                    spa: "ספא",
+                    businessEquipment: "ציוד לעסקים",
+                    outdoorScreens: "מסכי חוץ",
+                    ledScreens: "מסכי לד",
+                    gardenFurniture: "ריהוט גן",
+                    syntheticGrass: "דשא סינתטי",
+                    houseShade: "סכך לבית",
+                    covering: "חיפויים",
+                    woodCovering: "חיפוי דמוי עץ",
+                    exteriorCovering: "חיפוי חוץ",
+                    mobileStructures: "מבנים ניידים",
+                    igloo: "איגלו",
+                    vacationUnits: "יחידות נופש"
+                },
+                // שירותים
+                services: {
+                    title: "השירותים שלנו",
+                    subtitle: "למה כדאי לייבא דרכנו?",
+                    point1Title: "איתור ספקים",
+                    point1Desc: "אנו מאתרים עבורך את הספקים האיכותיים ביותר בעולם במחירים התחרותיים ביותר.",
+                    point2Title: "התנהלות מול ספקים",
+                    point2Desc: "אנו מנהלים את כל התקשורת והמשא ומתן מול הספקים בחו\"ל בשפתם.",
+                    point3Title: "שילוח ולוגיסטיקה",
+                    point3Desc: "אנו מטפלים בכל היבטי השילוח, ההובלה והמכס עבור המוצרים שלך.",
+                    point4Title: "בדיקת איכות",
+                    point4Desc: "אנו מבצעים בדיקות איכות מקיפות למוצרים לפני שילוחם לישראל.",
+                    point5Title: "ייעוץ עסקי",
+                    point5Desc: "אנו מספקים ייעוץ מקצועי לפיתוח והרחבת עסקים באמצעות יבוא.",
+                    point6Title: "ליווי מתמשך",
+                    point6Desc: "אנו מלווים את הלקוחות שלנו לאורך כל התהליך ומספקים תמיכה מתמשכת."
+                },
+                // למה לבחור בנו
+                whyUs: {
+                    title: "למה לבחור ב-VIPO?",
+                    saveTime: "חיסכון בזמן",
+                    saveTimeDesc: "נחסוך לך את החיפוש המייגע אחר ספקים אמינים ואת ההתמודדות עם פערי שפה ותרבות.",
+                    saveMoney: "חיסכון בכסף",
+                    saveMoneyDesc: "המחירים שנשיג עבורך יהיו תחרותיים בהרבה ממה שתוכל להשיג בעצמך, גם לאחר הוספת העמלה שלנו.",
+                    safety: "ביטחון ושקט נפשי",
+                    safetyDesc: "אנו מטפלים בכל הסיכונים ומבטיחים שהכסף שלך משולם רק כאשר המוצרים עומדים בציפיות שלך.",
+                    expertise: "מומחיות וניסיון",
+                    expertiseDesc: "צוות המומחים שלנו מביא עמו שנים רבות של ניסיון בתחום היבוא והסחר הבינלאומי.",
+                    timeSaving: "חיסכון זמן",
+                    timeSavingDesc: "אנו מטפלים בכל הפרטים הטכניים והלוגיסטיים, מה שמאפשר לך להתמקד בניהול העסק שלך.",
+                    savings: "חיסכון כספי משמעותי",
+                    savingsDesc: "הקשרים הישירים שלנו עם יצרנים וספקים מאפשרים לנו להשיג מחירים תחרותיים במיוחד.",
+                    globalAccess: "נגישות גלובלית",
+                    globalAccessDesc: "הקשרים שלנו מתפרשים בכל רחבי העולם, מה שמאפשר לנו לאתר את המוצרים הטובים ביותר מכל מקום."
+                },
+                // לקוחות מספרים
+                testimonials: {
+                    title: "לקוחות מספרים",
+                    shareExperience: "שתף את החוויה שלך",
+                    quote1: "\"חיפשתי ספק למיטות, VIPO איתרו לי מפעל מדהים עם מחיר חצי מהארץ – הגעתי לישראל עם מכולה תוך חודשיים!\"",
+                    author1: "אורית",
+                    business1: "חנות ריהוט",
+                    quote2: "\"שירות מדויק, אמין ומהיר. הדוגמה נבדקה עבורי, ראיתי הכל בווידאו, והרגשתי שאני שולט בתהליך.\"",
+                    author2: "תומר",
+                    business2: "ציוד לעסקים",
+                    quote3: "\"ייבאתי מוצרים לחנות שלי בפעם הראשונה בעזרת VIPO. הם טיפלו בכל התהליך מא\' ועד ת\' וחסכו לי המון כסף וכאבי ראש.\"",
+                    author3: "רונית",
+                    business3: "עיצוב הבית"
+                },
+                // כך זה עובד - היבוא בשלבים
+                process: {
+                    title: "כך זה עובד – היבוא בשלבים",
+                    step1Title: "1. איתור מוצר",
+                    step1Desc: "נאתר את המוצר המתאים לפי דרישה – כולל ניתוח שוק וספקים פוטנציאליים",
+                    step2Title: "2. בדיקת ספקים",
+                    step2Desc: "בדיקת רקע, חוות דעת, תקנים ואישור מפעל",
+                    step3Title: "3. דוגמאות",
+                    step3Desc: "הזמנת דוגמה למשרד בסין, בדיקה וצילום Live",
+                    step4Title: "4. בדיקת איכות",
+                    step4Desc: "צוות בקרת איכות מבצע בדיקה טרם שילוח",
+                    step5Title: "5. שילוח ולוגיסטיקה",
+                    step5Desc: "ניהול משלוח מלא כולל עמילות מכס ואספקה",
+                    step6Title: "6. ביטחון לכסף",
+                    step6Desc: "תשלומים מדורגים, שקיפות מלאה וליווי עד קבלת הסחורה"
+                },
+                // טופס צור קשר
+                contact: {
+                    title: "צור קשר",
+                    namePlaceholder: "שם מלא",
+                    phonePlaceholder: "טלפון",
+                    emailPlaceholder: "אימייל",
+                    subjectPlaceholder: "נושא הפנייה",
+                    messagePlaceholder: "הודעה",
+                    submitButton: "שלח הודעה",
+                    generalInquiry: "פניה כללית",
+                },
+                // פוטר
+                footer: {
+                    quickContact: "יצירת קשר מהיר",
+                    phone: "טלפון",
+                    whatsapp: "וואטסאפ",
+                    email: "אימייל",
+                    address: "כתובת",
+                    addressValue: "רחוב היצירה 13, רעננה",
+                    quickLinks: "קישורים מהירים",
+                    home: "דף הבית",
+                    services: "השירותים שלנו",
+                    contact: "צור קשר",
+                    copyright: "כל הזכויות שמורות."
+                },
+                map: {
+                    israel: "ישראל",
+                    china: "סין"
+                }
+            },
+            // תרגומים באנגלית
+            en: {
+                // תגיות מטא
+                seo: {
+                    title: "Import from China | Smart Import Services for Businesses | VIPO",
+                    description: "VIPO specializes in imports from China for businesses - product sourcing, supplier verification, shipping, customs clearance, and financial security. Complete import service from A to Z.",
+                },
+                // ממשק משתמש
+                ui: {
+                    langSwitcher: "עברית",
+                    whatsapp: "Contact via WhatsApp",
+                    whatsappIcon: "WhatsApp Icon",
+                    catalogButton: "📂 Catalogs",
+                    closeCatalog: "Close"
+                },
+                // כותרת
+                header: {
+                    slogan: "Advanced Import Solutions"
+                },
+                // מבוא
+                intro: {
+                    title: "Smart Import - Guaranteed Success!",
+                    paragraph1: "<strong>VIPO</strong> provides personalized import services that save you time and money.<br>Our company facilitates imports from leading manufacturers worldwide. The process is fast and simple, with personalized guidance tailored to your needs. Our clients enjoy access to quality products at competitive prices.",
+                    highlight: "📦 With us, it's possible!"
+                },
+                // מחשבון עלויות שילוח
+                calculator: {
+                    title: "Shipping Cost Calculator",
+                    description: "Calculate shipping costs, taxes and customs in advance",
+                    openButton: "Open Cost Calculator"
+                },
+                // קטלוג
+                catalog: {
+                    title: "Catalogs",
+                    furniture: "Furniture",
+                    spa: "Spa",
+                    businessEquipment: "Business Equipment",
+                    outdoorScreens: "Outdoor Screens",
+                    ledScreens: "LED Screens",
+                    gardenFurniture: "Garden Furniture",
+                    syntheticGrass: "Synthetic Grass",
+                    houseShade: "House Shade",
+                    covering: "Coverings",
+                    woodCovering: "Wood-like Covering",
+                    exteriorCovering: "Exterior Covering",
+                    mobileStructures: "Mobile Structures",
+                    igloo: "Igloo",
+                    vacationUnits: "Vacation Units",
+                    sofas: "Sofas",
+                    barChairs: "Bar Chairs",
+                    armchairs: "Armchairs & Sofas",
+                    luxurySofas1: "Luxury Sofas 1",
+                    luxurySofas2: "Luxury Sofas 2",
+                    beds: "Beds",
+                    swimmingCurrents: "Swimming Pool with Currents",
+                    jacuzzi: "Jacuzzi",
+                    massageChairs: "Massage Chairs",
+                    massageGlasses: "Massage Glasses",
+                    structure: "Structure & Finishing",
+                    windowsGlassDoors: "Windows & Glass Doors",
+                    villa: "Villa",
+                    pergolas: "Pergolas",
+                    shade: "Shade",
+                    doors: "Doors",
+                    office: "Office Equipment",
+                    papers: "Papers",
+                    seaSport: "Water Sports",
+                    boats: "Boats",
+                    kidsAndBabies: "Kids & Babies",
+                    comingSoon: "Coming soon...",
+                    productCount: "Product count:",
+                    manufacturingCountries: "Manufacturing countries:",
+                    averageDeliveryTime: "Average delivery time:"
+                },
+                // שירותים
+                services: {
+                    title: "Our Services",
+                    subtitle: "Why Import Through Us?",
+                    point1Title: "Supplier Sourcing",
+                    point1Desc: "We locate the highest quality suppliers worldwide at the most competitive prices for you.",
+                    point2Title: "Supplier Communication",
+                    point2Desc: "We manage all communication and negotiation with overseas suppliers in their language.",
+                    point3Title: "Shipping & Logistics",
+                    point3Desc: "We handle all aspects of shipping, transportation, and customs for your products.",
+                    point4Title: "Quality Control",
+                    point4Desc: "We perform comprehensive quality checks on products before shipping them to Israel.",
+                    point5Title: "Business Consulting",
+                    point5Desc: "We provide professional consulting for developing and expanding businesses through imports.",
+                    point6Title: "Ongoing Support",
+                    point6Desc: "We accompany our clients throughout the process and provide ongoing support."
+                },
+                // למה לבחור בנו
+                whyUs: {
+                    title: "Why Choose VIPO?",
+                    point1: "Expertise in the Chinese Market",
+                    point2: "Direct Communication with Suppliers",
+                    point3: "Personal & Professional Service",
+                    point4: "Significant Cost Savings",
+                    expertise: "Expertise & Experience",
+                    expertiseDesc: "Our expert team brings years of experience in import and international trade.",
+                    timeSaving: "Time Saving",
+                    timeSavingDesc: "We handle all technical and logistical details, allowing you to focus on running your business.",
+                    savings: "Significant Cost Savings",
+                    savingsDesc: "Our direct connections with manufacturers and suppliers allow us to obtain highly competitive prices.",
+                    globalAccess: "Global Access",
+                    globalAccessDesc: "Our connections span the globe, allowing us to source the best products from anywhere."
+                },
+                // כך זה עובד - היבוא בשלבים
+                process: {
+                    title: "How It Works - Import Steps",
+                    step1Title: "1. Product Sourcing",
+                    step1Desc: "We find the right product according to requirements - including market analysis and potential suppliers",
+                    step2Title: "2. Supplier Verification",
+                    step2Desc: "Background checks, reviews, standards and factory approval",
+                    step3Title: "3. Samples",
+                    step3Desc: "Sample ordering to our office in China, inspection and Live video",
+                    step4Title: "4. Quality Control",
+                    step4Desc: "Quality control team performs pre-shipment inspection",
+                    step5Title: "5. Shipping & Logistics",
+                    step5Desc: "Full shipment management including customs clearance and delivery",
+                    step6Title: "6. Money Security",
+                    step6Desc: "Graduated payments, full transparency and support until receiving the goods"
+                },
+                // צור קשר
+                contact: {
+                    title: "Contact Us",
+                    info: "For personal consulting and more information, leave your details and we'll get back to you soon:",
+                    name: "Full Name",
+                    email: "Email",
+                    phone: "Phone",
+                    message: "Message",
+                    submit: "Send"
+                },
+                // לקוחות מספרים
+                testimonials: {
+                    title: "Client Testimonials",
+                    shareExperience: "Share Your Experience",
+                    quote1: "\"I was looking for a bed supplier, and VIPO found me an amazing factory with prices half of what I'd pay locally - I had a container shipped to Israel within two months!\"",
+                    author1: "Orit",
+                    business1: "Furniture Store",
+                    quote2: "\"The service was precise, reliable, and fast. The sample was checked for me, I saw everything via video, and felt in control of the process.\"",
+                    author2: "Tomer",
+                    business2: "Business Equipment",
+                    quote3: "\"I imported products for my store for the first time with VIPO. They handled the entire process from A to Z and saved me a lot of money and headaches.\"",
+                    author3: "Ronit",
+                    business3: "Home Design"
+                },
+                // פוטר
+                footer: {
+                    quickContact: "Quick Contact",
+                    phone: "Phone",
+                    whatsapp: "WhatsApp",
+                    email: "Email",
+                    address: "Address",
+                    addressValue: "13 Hayetzira St., Ra'anana",
+                    quickLinks: "Quick Links",
+                    home: "Home",
+                    services: "Our Services",
+                    contact: "Contact Us",
+                    copyright: "All Rights Reserved."
+                },
+                map: {
+                    israel: "Israel",
+                    china: "China"
+                },
+                // קטלוגים
+                catalog: {
+                    title: "Catalogs",
+                    furniture: "Furniture",
+                    sofas: "Sofas",
+                    barChairs: "Bar Chairs",
+                    armchairs: "Armchairs & Sofas",
+                    luxurySofas1: "Luxury Sofas 1",
+                    luxurySofas2: "Luxury Sofas 2",
+                    beds: "Beds",
+                    spa: "Spa",
+                    swimmingCurrents: "Swimming Pool with Currents",
+                    jacuzzi: "Jacuzzi",
+                    massageChairs: "Massage Chairs",
+                    massageGlasses: "Massage Glasses",
+                    businessEquipment: "Business Equipment",
+                    outdoorScreens: "Outdoor Screens",
+                    ledScreens: "LED Screens",
+                    gardenFurniture: "Garden Furniture",
+                    syntheticGrass: "Synthetic Grass",
+                    houseShade: "House Shade",
+                    covering: "Coverings",
+                    woodCovering: "Wood-like Covering",
+                    exteriorCovering: "Exterior Covering",
+                    mobileStructures: "Mobile Structures",
+                    igloo: "Igloo",
+                    vacationUnits: "Vacation Units",
+                    structure: "Structure & Finishing",
+                    windowsGlassDoors: "Windows & Glass Doors",
+                    villa: "Villa",
+                    pergolas: "Pergolas",
+                    shade: "Shade",
+                    doors: "Doors",
+                    office: "Office Equipment",
+                    papers: "Papers",
+                    seaSport: "Water Sports",
+                    boats: "Boats",
+                    kidsAndBabies: "Kids & Babies",
+                    comingSoon: "Coming soon..."
+                }
+            },
+            zh: {
+                // SEO
+                seo: {
+                    title: "VIPO - 为您提供从中国进口的智能服务",
+                    description: "VIPO - 致力于提供专业的中国进口服务，使您的采购过程更加简单、安全和省钱。"
+                },
+                // כותרת
+                header: {
+                    slogan: "先进的进口解决方案"
+                },
+                // כותרת ראשית
+                hero: {
+                    mainTitle: "智能进口 - 保证成功",
+                    subTitle: "VIPO提供个性化的进口服务，为您节省时间和金钱。",
+                    companyDesc: "我们的公司促进从世界各地的领先制造商进口。流程快速简单，提供量身定制的个性化指导，满足您的需求。我们的客户可以享受到以有竞争力的价格获取高质量产品。",
+                    slogan: "有我们，一切皆有可能"
+                },
+                // מבוא
+                intro: {
+                    title: "智能进口 - 保证成功！",
+                    paragraph1: "<strong>VIPO</strong>公司提供定制化的进口服务，为您节省时间和金钱。<br>我们公司促进与全球领先制造商的进口业务，过程快速简单，提供量身定制的个性化指导，满足您的需求。我们的客户可以享受到以有竞争力的价格获取高质量产品。",
+                    highlight: "📦 有我们，一切皆有可能！"
+                },
+                // מחשבון עלויות שילוח
+                calculator: {
+                    title: "运费计算器",
+                    description: "提前计算运费、税费和海关费用",
+                    openButton: "打开费用计算器"
+                },
+                // UI אלמנטים
+                ui: {
+                    languageSwitchButton: "中文",
+                    learnMore: "了解更多",
+                    catalogButton: "📂 目录",
+                    closeCatalog: "关闭",
+                    requestCatalog: "申请此目录"
+                },
+                // שירותים
+                services: {
+                    title: "我们的服务",
+                    point1Title: "寻找供应商",
+                    point1Desc: "我们为您寻找世界上最优质的供应商，以最具竞争力的价格。",
+                    point2Title: "供应商互动",
+                    point2Desc: "我们用当地语言管理与国外供应商的所有沟通和谈判。",
+                    point3Title: "质量控制",
+                    point3Desc: "我们的代表会亲临工厂检查您的产品和生产过程。",
+                    point4Title: "货运和物流",
+                    point4Desc: "我们处理物流链的所有环节，从工厂到您的仓库。",
+                    point5Title: "支付保障",
+                    point5Desc: "我们确保您的资金安全，只有当产品符合您的期望时才付款。",
+                    point6Title: "语言障碍消除",
+                    point6Desc: "我们克服语言障碍，确保所有信息准确传达。"
+                },
+                // למה לבחור בנו
+                whyUs: {
+                    title: "为什么选择VIPO？",
+                    saveTime: "节省时间",
+                    saveTimeDesc: "我们为您省去寻找可靠供应商的麻烦，以及克服语言和文化差异的挑战。",
+                    saveMoney: "节省资金",
+                    saveMoneyDesc: "即使加上我们的服务费，我们为您获取的价格也比您自己能获得的更具竞争力。",
+                    safety: "安心保障",
+                    safetyDesc: "我们处理所有风险，确保您的资金只在产品满足您期望时才支付。",
+                    expertise: "专业经验",
+                    expertiseDesc: "我们的专家团队带来多年的进口和国际贸易经验。",
+                    timeSaving: "节省时间",
+                    timeSavingDesc: "我们处理所有技术和物流细节，让您专注于经营自己的业务。",
+                    savings: "显著节约成本",
+                    savingsDesc: "我们与制造商和供应商的直接联系使我们能够获得特别优惠的价格。",
+                    globalAccess: "全球通达",
+                    globalAccessDesc: "我们的联系网遍布全球，使我们能够从任何地方采购最佳产品。"
+                },
+                // לקוחות מספרים
+                testimonials: {
+                    title: "客户评价",
+                    shareExperience: "分享您的体验",
+                    quote1: "\"我在寻找床具供应商，VIPO为我找到了一家惊人的工厂，价格只有当地的一半——两个月内我就收到了运往以色列的集装箱！\"",
+                    author1: "奥里特",
+                    business1: "家具店",
+                    quote2: "\"服务精准、可靠且快速。样品已为我检查，我通过视频看到了一切，感觉整个过程都在掌控中。\"",
+                    author2: "托默",
+                    business2: "商业设备",
+                    quote3: "\"我首次通过VIPO为我的商店进口产品。他们从头到尾处理了整个过程，为我节省了大量资金和麻烦。\"",
+                    author3: "罗尼特",
+                    business3: "家居设计"
+                },
+                // כך זה עובד - היבוא בשלבים
+                process: {
+                    title: "进口流程",
+                    step1Title: "1. 需求分析",
+                    step1Desc: "了解您的特定需求和规格",
+                    step2Title: "2. 市场研究",
+                    step2Desc: "寻找最佳供应商并获取报价",
+                    step3Title: "3. 样品验证",
+                    step3Desc: "订购样品并根据您的反馈进行调整",
+                    step4Title: "4. 质量控制",
+                    step4Desc: "质检团队执行装运前检查",
+                    step5Title: "5. 运输和物流",
+                    step5Desc: "全面的运输管理，包括清关和配送",
+                    step6Title: "6. 资金安全",
+                    step6Desc: "分阶段付款，完全透明，直到收到货物的全程支持"
+                },
+                // צור קשר
+                contact: {
+                    title: "联系我们",
+                    info: "如需个人咨询和更多信息，请留下您的详细信息，我们将尽快与您联系：",
+                    name: "全名",
+                    email: "电子邮件",
+                    phone: "电话",
+                    message: "留言",
+                    submit: "发送"
+                },
+                // פוטר
+                footer: {
+                    quickContact: "快速联系",
+                    phone: "电话",
+                    whatsapp: "WhatsApp",
+                    email: "电子邮件",
+                    address: "地址",
+                    addressValue: "以色列拉阿纳纳，哈耶兹拉街13号",
+                    quickLinks: "快速链接",
+                    home: "首页",
+                    services: "我们的服务",
+                    contact: "联系我们",
+                    copyright: "版权所有。"
+                },
+                map: {
+                    israel: "以色列",
+                    china: "中国"
+                },
+                // קטלוגים
+                catalog: {
+                    title: "目录",
+                    furniture: "家具",
+                    sofas: "沙发",
+                    barChairs: "吧椅",
+                    armchairs: "扶手椅与沙发",
+                    luxurySofas1: "豪华沙发 1",
+                    luxurySofas2: "豪华沙发 2",
+                    beds: "床",
+                    spa: "水疗",
+                    swimmingCurrents: "游泳池设备",
+                    jacuzzi: "按摩浴缸",
+                    massageChairs: "按摩椅",
+                    massageGlasses: "按摩眼镜",
+                    businessEquipment: "商业设备",
+                    outdoorScreens: "户外屏幕",
+                    ledScreens: "LED屏幕",
+                    gardenFurniture: "花园家具",
+                    syntheticGrass: "人造草",
+                    houseShade: "房屋遮阳",
+                    covering: "覆盖物",
+                    woodCovering: "仿木覆盖物",
+                    exteriorCovering: "外部覆盖物",
+                    mobileStructures: "移动结构",
+                    igloo: "圆顶",
+                    vacationUnits: "度假单元",
+                    structure: "结构与装饰",
+                    windowsGlassDoors: "窗户和玻璃门",
+                    villa: "别墅",
+                    pergolas: "凉棚",
+                    shade: "遮阳篷",
+                    doors: "门",
+                    office: "办公设备",
+                    papers: "纸张",
+                    seaSport: "水上运动",
+                    boats: "船",
+                    kidsAndBabies: "儿童与婴儿",
+                    comingSoon: "即将推出...",
+                    productCount: "产品数量：",
+                    manufacturingCountries: "生产国家：",
+                    averageDeliveryTime: "平均交货时间："
+                }
+            }
+        };
+        let currentLang = 'he';
+
+        // מחלץ את השפה מ-URL אם קיימת
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        if (langParam === 'en' || langParam === 'zh') {
+            currentLang = langParam;
+        }
+
+        // פונקציה לשינוי השפה
+        function switchLanguage(lang) {
+            // עדכון השפה הנוכחית
+            currentLang = lang;
+            
+            // עדכון ה-URL
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
+            
+            // שינוי כיווניות הדף
+            const htmlElement = document.getElementById('htmlRoot');
+            if (lang === 'he') {
+                htmlElement.setAttribute('dir', 'rtl');
+                htmlElement.setAttribute('lang', 'he');
+            } else {
+                htmlElement.setAttribute('dir', 'ltr');
+                htmlElement.setAttribute('lang', lang);
+            }
+
+            // עדכון כותרת ותיאור SEO וכל תגיות META
+            try {
+                document.title = translations[lang].seo.title;
+                document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].seo.description);
+                document.querySelector('meta[property="og:title"]').setAttribute('content', translations[lang].seo.title);
+                document.querySelector('meta[property="og:description"]').setAttribute('content', translations[lang].seo.description);
+                document.querySelector('meta[name="twitter:title"]').setAttribute('content', translations[lang].seo.title);
+                document.querySelector('meta[name="twitter:description"]').setAttribute('content', translations[lang].seo.description);
+            } catch (error) {
+                console.error('Error updating meta tags for language:', lang);
+            }
+            
+            // עדכון כל האלמנטים המתורגמים
+            document.querySelectorAll('.translatable').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (key) {
+                    const keyParts = key.split('.');
+                    let value = translations[lang];
+                    // שליפת הערך מהמפתח המדורג
+                    for (const part of keyParts) {
+                        if (value && value[part]) {
+                            value = value[part];
+                        } else {
+                            value = null;
+                            break;
+                        }
+                    }
+                    // הצגת התרגום
+                    if (value !== null) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.setAttribute('placeholder', value);
+                        } else if (element.hasAttribute('data-html')) {
+                            element.innerHTML = value;
+                        } else if (element.tagName === 'IMG') {
+                            element.alt = value;
+                        } else {
+                            element.textContent = value;
+                        }
+                    }
+                }
+            });
+            // עדכון alt לכל תמונה עם data-key (נגישות)
+            document.querySelectorAll('img[data-key]').forEach(img => {
+                const key = img.getAttribute('data-key');
+                if (key && translations[lang]) {
+                    let value = translations[lang];
+                    key.split('.').forEach(part => {
+                        if (value && value[part]) value = value[part];
+                    });
+                    if (typeof value === 'string') img.alt = value;
+                }
+            });
+            
+            // עדכון כפתורי השפה
+            document.getElementById('he-btn').classList.toggle('active', lang === 'he');
+            document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+            document.getElementById('zh-btn').classList.toggle('active', lang === 'zh');
+            
+            // עדכון תוכן SEO נסתר
+            const seoContent = document.querySelector('div[style="display:none;"]');
+            if (seoContent) {
+                if (lang === 'en') {
+                    seoContent.innerHTML = `
+                      <h2>Import from China for Businesses in Israel</h2>
+                      <p>VIPO offers smart import services from China: supplier sourcing, samples, shipping, quality control, taxes and customs clearance.</p>
+                      <p>Personal service for every business - office in China, direct contact with manufacturers.</p>
+                    `;
+                } else if (lang === 'zh') {
+                    seoContent.innerHTML = `
+                      <h2>从中国进口到以色列的业务</h2>
+                      <p>VIPO提供智能进口服务：供应商采购、样品、运输、质量控制、税收和清关。</p>
+                      <p>为每个企业提供个性化服务 - 中国办事处，直接联系制造商。</p>
+                    `;
+                } else {
+                    seoContent.innerHTML = `
+                      <h2>יבוא מסין לעסקים בישראל</h2>
+                      <p>VIPO מציעה שירותי יבוא חכמים מסין: איתור ספקים, דוגמאות, שילוח, בדיקות איכות, מיסים ועמילות מכס.</p>
+                      <p>שירות אישי לכל עסק - משרד בסין, קשר ישיר עם יצרנים.</p>
+                    `;
+                }
+            }
+            
+            // רענון הדף כדי להחיל את השינויים
+            window.location.href = url.toString();
+        }
+        
+        // כאשר הדף נטען מחדש או נסגר, תמיד נחזיר אותו לראש העמוד
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+
+        // מחכה עד שהדף נטען במלואו, ואז מבצע אתחול
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log('DOM fully loaded. Initializing site with language:', currentLang);
+            
+            // מחזיר לראש הדף
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100); // מחכה 100ms כדי לוודא שהדף התייצב
+            
+            // אתחול כל האלמנטים באתר שהם טקסט עם המחלקה translatable ומפתח תרגום
+            initializeAllElements();
+            
+            // הצגת כפתור השפה הפעיל
+            document.getElementById(currentLang + '-btn').classList.add('active');
+
+            // אם צריך לרענן את הדף לפי הפרמטר מה-URL, יש מקום להפעיל את הפונקציה
+            // אחרת, אפשר רק לאתחל את התרגום של האלמנטים ללא רענון מלא
+            if (window.location.search.includes('lang=')) {
+                console.log('URL already contains language parameter. Updating content without refresh.');
+                updateAllTranslations(currentLang);
+            } else {
+                console.log('URL does not contain language parameter. Initializing language.');
+                switchLanguage(currentLang);
+            }
+        });
+        
+        // פונקציה שמוסיפה אוטומטית את המחלקה translatable ומפתח תרגום לאלמנטים
+        function initializeAllElements() {
+            console.log('Initializing translatable elements...');
+            // מילון של אלמנטים ומפתחות התרגום שלהם
+            const elementMappings = [
+                // כותרות וטקסטים בסיסיים
+                { selector: '.intro-container h2', key: 'intro.title' },
+                { selector: '.intro-container p:first-of-type', key: 'intro.paragraph1', html: true },
+                { selector: '.intro-container .highlight-text', key: 'intro.highlight' },
+                
+                // סרגל צד קטלוגים - כל הכותרות והקישורים
+                { selector: '.sidebar-header h3', key: 'catalog.title' },
+                { selector: '.sidebar-header .close-sidebar', key: 'ui.closeCatalog' },
+                
+                // כותרות הקטגוריות בסרגל הצד
+                { selector: '.catalog-category h4', matches: 'furniture', key: 'catalog.furniture' },
+                { selector: '.catalog-category h4', matches: 'spa', key: 'catalog.spa' },
+                { selector: '.catalog-category h4', matches: 'lighting', key: 'catalog.lighting' },
+                
+                // פרטי תוכן נוספים באתר
+                { selector: 'footer .copyright', key: 'footer.copyright' },
+                { selector: 'footer .contact-info h3', key: 'footer.contactInfo' },
+                { selector: 'footer .working-hours', key: 'footer.hours' },
+                
+                // כפתורים וטפסים
+                { selector: '.contact-form h2', key: 'contact.title' },
+                { selector: '.contact-form .submit-btn', key: 'contact.submitButton' }
+            ];
+            
+            let translatedElementsCount = 0;
+            
+            // הוספת המחלקה translatable ומפתח תרגום לכל האלמנטים
+            elementMappings.forEach(mapping => {
+                try {
+                    const elements = document.querySelectorAll(mapping.selector);
+                    if (elements.length === 0) {
+                        console.log(`Warning: No elements found for selector ${mapping.selector}`);
+                        return;
+                    }
+                    
+                    elements.forEach(element => {
+                        // בדוק אם צריך להתאים לתנאי מסוים
+                        if (mapping.matches) {
+                            // אם האלמנט מכיל את הטקסט או את ה-ID שצריך להתאים
+                            if (!element.textContent.includes(mapping.matches) && 
+                                !element.id.includes(mapping.matches) && 
+                                !(element.onclick && element.onclick.toString().includes(mapping.matches))) {
+                                return;
+                            }
+                        }
+                        
+                        // הוסף את המחלקה translatable ומפתח תרגום
+                        element.classList.add('translatable');
+                        element.setAttribute('data-key', mapping.key);
+                        if (mapping.html) {
+                            element.setAttribute('data-html', 'true');
+                        }
+                        translatedElementsCount++;
+                    });
+                } catch (error) {
+                    console.error(`Error processing selector ${mapping.selector}:`, error);
+                }
+            });
+            
+            console.log(`Initialized ${translatedElementsCount} translatable elements`);
+        }
+        
+        // פונקציה לעדכון כל התרגומים ללא רענון הדף
+        function updateAllTranslations(lang) {
+            console.log(`Updating all translations to ${lang}`);
+            
+            // שינוי כיווניות הדף
+            const htmlElement = document.getElementById('htmlRoot');
+            if (lang === 'he') {
+                htmlElement.setAttribute('dir', 'rtl');
+                htmlElement.setAttribute('lang', 'he');
+            } else {
+                htmlElement.setAttribute('dir', 'ltr');
+                htmlElement.setAttribute('lang', lang);
+            }
+
+            // עדכון כותרת ותיאור
+            try {
+                document.title = translations[lang].seo.title;
+                document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].seo.description);
+            } catch (error) {
+                console.error('Error updating meta tags for language:', lang, error);
+            }
+            
+            // עדכון כל האלמנטים המתורגמים
+            let updatedElementsCount = 0;
+                        // תרגום כל האלמנטים בפוטר בשלב ראשון
+            document.querySelectorAll('.footer-heading, .footer-col a, .footer-col span.translatable, .copyright span.translatable').forEach(element => {
+                // בדיקה ישירה של תרגום אלמנטי הפוטר
+                const key = element.getAttribute('data-key');
+                if (key && key.startsWith('footer.')) {
+                    const keyParts = key.split('.');
+                    let value = translations[lang];
+                    
+                    for (const part of keyParts) {
+                        if (value && value[part]) {
+                            value = value[part];
+                        } else {
+                            console.warn(`Footer translation key ${key} missing for language ${lang}`);
+                            value = null;
+                            break;
+                        }
+                    }
+                    
+                    if (value !== null) {
+                        console.log(`Updating footer element with key ${key} for ${lang} to:`, value);
+                        element.innerHTML = value;
+                    }
+                }
+            });
+                
+            // תרגום שאר האלמנטים
+            document.querySelectorAll('.translatable').forEach(element => {
+                // אם זה אלמנט מהפוטר שכבר טיפלנו בו, נדלג
+                const key = element.getAttribute('data-key');
+                if (key && !key.startsWith('footer.')) {
+                    const keyParts = key.split('.');
+                    let value = translations[lang];
+                    
+                    // שליפת הערך מהמפתח המדורג
+                    for (const part of keyParts) {
+                        if (value && value[part]) {
+                            value = value[part];
+                        } else {
+                            console.warn(`Translation key ${key} missing for language ${lang}`);
+                            value = null;
+                            break;
+                        }
+                    }
+                    
+                    // הצגת התרגום
+                    if (value !== null) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.setAttribute('placeholder', value);
+                        } else if (element.hasAttribute('data-html')) {
+                            element.innerHTML = value;
+                        } else {
+                            element.textContent = value;
+                        }
+                        updatedElementsCount++;
+                    }
+                }
+            });
+            
+            // תרגום מאפיינים (attributes) של אלמנטים
+            document.querySelectorAll('[data-localize]').forEach(element => {
+                const attributeToLocalize = element.getAttribute('data-localize');
+                const titleKey = element.getAttribute('data-title-key');
+                
+                if (attributeToLocalize && titleKey) {
+                    const keyParts = titleKey.split('.');
+                    let value = translations[lang];
+                    
+                    // שליפת הערך מהמפתח המדורג
+                    for (const part of keyParts) {
+                        if (value && value[part]) {
+                            value = value[part];
+                        } else {
+                            console.warn(`Attribute translation key ${titleKey} missing for language ${lang}`);
+                            value = null;
+                            break;
+                        }
+                    }
+                    
+                    // הצגת התרגום במאפיין
+                    if (value !== null) {
+                        element.setAttribute(attributeToLocalize, value);
+                        updatedElementsCount++;
+                    }
+                }
+            });
+            
+            // עדכון כפתורי השפה
+            document.getElementById('he-btn').classList.toggle('active', lang === 'he');
+            document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+            document.getElementById('zh-btn').classList.toggle('active', lang === 'zh');
+            
+            console.log(`Updated ${updatedElementsCount} translated elements to ${lang}`);
+        }
+    </script>
+</head>
+<body>
+    <!-- מתג החלפת שפה עם דגלים בעיצוב חדש -->
+    <div class="language-switcher-top">
+        <!-- קבוצת כפתורי שפה ממורכזת -->
+        <div class="lang-group">
+            <a href="?lang=he" class="lang-btn flag-btn translatable" id="he-btn" title="עברית" aria-label="החלף לעברית" data-key="ui.switchToHebrew">
+                <img class="flag-icon translatable" src="https://flagcdn.com/w40/il.png" width="40" data-key="ui.flagIL" alt="דגל ישראל"> <!-- alt מתורגם דינמית -->
+                <span class="lang-name">עברית</span>
+            </a>
+            <a href="?lang=en" class="lang-btn flag-btn translatable" id="en-btn" title="English" aria-label="Switch to English" data-key="ui.switchToEnglish">
+                <img class="flag-icon translatable" src="https://flagcdn.com/w40/us.png" width="40" data-key="ui.flagUS" alt="USA Flag"> <!-- alt מתורגם דינמית -->
+                <span class="lang-name">English</span>
+            </a>
+            <a href="?lang=zh" class="lang-btn flag-btn translatable" id="zh-btn" title="中文" aria-label="切换到中文" data-key="ui.switchToChinese">
+                <img class="flag-icon translatable" src="https://flagcdn.com/w40/cn.png" width="40" data-key="ui.flagCN" alt="דגל סין"> <!-- alt מתורגם דינמית -->
+                <span class="lang-name">中文</span>
+            </a>
+        </div>
+    </div>
+    <!-- תוכן נסתר לקידום SEO -->
+    <div style="display:none;">
+      <h2>יבוא מסין לעסקים בישראל</h2>
+      <p>VIPO מציעה שירותי יבוא חכמים מסין: איתור ספקים, דוגמאות, שילוח, בדיקות איכות, מיסים ועמילות מכס.</p>
+      <p>שירות אישי לכל עסק – משרד בסין, קשר ישיר למפעלים.</p>
+      <h2>Import from China</h2>
+      <p>Import services from China for Israeli businesses: sourcing, quality control, logistics, and customs.</p>
+    </div>
+    <!-- כפתור צף של וואטסאפ -->
+    <a href="https://wa.me/972587009938" class="whatsapp-float" target="_blank" aria-label="צור קשר בוואטסאפ" title="צור קשר בוואטסאפ" class="translatable" data-key="ui.whatsapp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" role="img" aria-labelledby="whatsappTitle">
+            <title id="whatsappTitle" class="translatable" data-key="ui.whatsappIcon">אייקון וואטסאפ</title>
+            <path fill="#fff" d="M12 0a12 12 0 00-10.6 17.64L0 24l6.46-1.39A12 12 0 1012 0zm5.51 15.73c-.23.66-1.33 1.3-1.82 1.38-.47.08-1.06.12-1.71-.11A10.79 10.79 0 017 13.57a8.36 8.36 0 01-2.29-3.57c-.24-.66-.03-1.25.05-1.41.12-.25.26-.39.35-.48.17-.18.36-.22.47-.22.11 0 .24 0 .35.01.11 0 .26-.04.41.31s.54 1.25.58 1.34a1.14 1.14 0 01.06 1.08 3.69 3.69 0 01-.55 1c-.08.1-.17.21-.07.41.09.2.42.69.91 1.12a7.45 7.45 0 001.23.9c.15.08.25.06.35-.05s.4-.46.51-.61.26-.13.44-.08 1.12.53 1.32.62.33.14.38.22.05.85-.17 1.5z"/>
+        </svg>
+    </a>
+    
+    <!-- עיטורים סיניים בפינות -->
+    <div class="chinese-corner top-left" aria-hidden="true" role="presentation"></div>
+    <div class="chinese-corner top-right" aria-hidden="true" role="presentation"></div>
+    <div class="chinese-corner bottom-left" aria-hidden="true" role="presentation"></div>
+    <div class="chinese-corner bottom-right" aria-hidden="true" role="presentation"></div>
+    
+    <!-- אנימציית משי סיני מקצועית -->
+    <div class="silk-animation" aria-hidden="true" role="presentation">
+        <div class="silk-ribbon ribbon-1"></div>
+        <div class="silk-ribbon ribbon-2"></div>
+        <div class="silk-ribbon ribbon-3"></div>
+        <div class="silk-particles"></div>
+    </div>
+    
+    <!-- אפקט זהב מינימליסטי -->
+    <div class="gold-effect-container" id="goldEffectContainer"></div>
+    
+
+    
+    <div class="container">
+        <header>
+            <h1 data-chinese="进口解决方案" class="main-logo">VIPO</h1>
+            <div class="gradient-separator"></div>
+            <p class="translatable header-slogan" data-key="header.slogan" data-html="true">פתרונות יבוא מתקדמים</p>
+        </header>
+
+        <style>
+            .main-logo {
+                font-size: 4rem;
+                margin-bottom: 8px;
+                animation: logo-fade-in 1.2s ease-out;
+                text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            .gradient-separator {
+                height: 4px;
+                width: 100px;
+                margin: 10px auto 20px;
+                background: linear-gradient(90deg, transparent, #ffcc00, #ffa500, #ffcc00, transparent);
+                animation: separator-slide 1.5s ease-out;
+                border-radius: 2px;
+            }
+
+            .header-slogan {
+                font-size: 1.35rem;
+                opacity: 0;
+                animation: slogan-fade-in 1s ease-out 0.5s forwards;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+            }
+            
+            /* התאמות למובייל */
+            @media (max-width: 768px) {
+                .main-logo {
+                    font-size: 4.5rem;
+                    margin-bottom: 10px;
+                }
+                
+                .gradient-separator {
+                    width: 120px;
+                    height: 5px;
+                }
+                
+                .header-slogan {
+                    font-size: 1.5rem;
+                    margin-top: 15px;
+                }
+            }
+
+            @keyframes logo-fade-in {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes separator-slide {
+                from { width: 0; opacity: 0; }
+                to { width: 80px; opacity: 1; }
+            }
+
+            @keyframes slogan-fade-in {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+
+        <!-- קופסת פתיחה עם רקע חצי שקוף ואנימציה -->
+        <div class="intro-container">
+            <div class="intro-pattern-overlay"></div>
+            <h2 class="translatable intro-title" data-key="intro.title">יבוא חכם – הצלחה בטוחה!</h2>
+            
+            <style>
+                .intro-title {
+                    position: relative;
+                    margin-bottom: 25px;
+                    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+                    font-size: 1.9em;
+                    color: white;
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                .intro-title::after {
+                    content: '';
+                    position: absolute;
+                    width: 70%;
+                    height: 3px;
+                    bottom: -10px;
+                    left: 15%;
+                    background: linear-gradient(90deg, transparent, rgba(255, 204, 0, 0.5), transparent);
+                    border-radius: 2px;
+                }
+                
+                @media (max-width: 768px) {
+                    .intro-title {
+                        font-size: 2.2em;
+                        margin-bottom: 30px;
+                    }
+                    
+                    .intro-title::after {
+                        height: 4px;
+                        bottom: -12px;
+                    }
+                }
+            </style>
+            <div class="intro-content">
+                <p class="translatable intro-paragraph" data-key="intro.paragraph1" data-html="true"></p>
+                <p class="translatable intro-paragraph" data-key="intro.paragraph2" data-html="true"></p>
+                <p class="translatable intro-paragraph" data-key="intro.paragraph3" data-html="true"></p>
+            </div>
+            
+            <style>
+                .intro-paragraph {
+                    margin-bottom: 15px;
+                    font-size: 1.05em;
+                }
+                
+                @media (max-width: 768px) {
+                    .intro-paragraph {
+                        font-size: 1.2em;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .intro-icon {
+                        font-size: 1.3em;
+                        width: 25px;
+                        margin-left: 12px;
+                    }
+                }
+            </style>
+            <p class="highlight-text translatable" data-key="intro.highlight">
+                <i class="fas fa-check-circle golden-icon" style="margin-left: 12px;"></i> איתנו זה אפשרי!
+            </p>
+            
+            <style>
+                .highlight-text {
+                    font-size: 1.6em;
+                    font-weight: 700;
+                    margin-top: 25px;
+                    margin-bottom: 10px;
+                    color: white;
+                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                .highlight-text::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: -6px;
+                    left: 0;
+                    background: linear-gradient(90deg, transparent, #ffcc00, transparent);
+                }
+                
+                .golden-icon {
+                    color: #ffcc00;
+                    filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.7));
+                    font-size: 1.2em;
+                    vertical-align: middle;
+                    animation: gentle-pulse 2s infinite ease-in-out;
+                }
+                
+                @keyframes gentle-pulse {
+                    0% { opacity: 0.8; }
+                    50% { opacity: 1; }
+                    100% { opacity: 0.8; }
+                }
+                
+                @media (max-width: 768px) {
+                    .highlight-text {
+                        font-size: 1.8em;
+                        margin-top: 30px;
+                    }
+                    
+                    .golden-icon {
+                        font-size: 1.4em !important;
+                        margin-left: 15px !important;
+                    }
+                }
+            </style>
+        </div>
+
+        <style>
+            .intro-container {
+                position: relative;
+                background: linear-gradient(135deg, rgba(0, 45, 90, 0.85), rgba(0, 60, 120, 0.85));
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 30px 25px 35px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            }
+            
+            @media (max-width: 768px) {
+                .intro-container {
+                    padding: 35px 20px 40px;
+                    width: 92%;
+                    margin: 0 auto;
+                    border-radius: 12px;
+                }
+            }
+
+            .intro-pattern-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234196e0' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+                opacity: 0.3;
+                pointer-events: none;
+            }
+
+            .intro-title {
+                position: relative;
+                margin-bottom: 20px;
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .intro-content {
+                position: relative;
+                z-index: 1;
+                line-height: 1.7;
+                padding: 5px 15px;
+            }
+
+            .intro-icon {
+                color: #4db8ff;
+                margin-left: 10px;
+                width: 22px;
+                text-align: center;
+                filter: drop-shadow(0 0 2px rgba(77, 184, 255, 0.4));
+            }
+
+            .intro-content p {
+                margin-bottom: 12px;
+            }
+
+            .pulse-animation {
+                animation: pulse 2s infinite;
+                filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.7));
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.1);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            /* גלים בתחתית המבוא */
+            .intro-container::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 15px;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' style='fill: %23002d5a;'/%3E%3C/svg%3E") no-repeat;
+                background-size: cover;
+                z-index: 1;
+            }
+        </style>
+
+        <!-- מחשבון עלויות שילוח - פתיחה בחלון חדש -->
+        <div class="calculator-section">
+            <h2 class="section-heading translatable" data-key="calculator.title">מחשבון עלויות שילוח</h2>
+            <p class="section-description translatable" data-key="calculator.description">חישוב מראש של עלויות שילוח ומכס</p>
+            <div class="calculator-container text-center">
+                <a href="https://vipoconnect.github.io/12/" target="_blank" class="calculator-button">
+                    <span class="translatable" data-key="calculator.openButton">פתח מחשבון</span>
+                    <i class="fas fa-calculator" style="color: #ffffff; margin-right: 8px; font-size: 0.85em;"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- כפתור לפתיחת סרגל צד קטלוגים -->
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+            <button onclick="toggleSidebar()" class="catalog-button" id="catalogBtn">
+                <i class="fas fa-folder-open" style="color: #ffffff; margin-left: 12px; font-size: 1.4em;"></i>
+                <span class="translatable" data-key="ui.newCatalogButton">צפה בקטלוגים</span>
+            </button>
+        </div>
+
+        <!-- סגנון CSS לכפתור קטלוגים -->
+        <style>
+            .catalog-button {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(45deg, #005cb9, #0088cc);
+                color: white;
+                padding: 18px 32px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.2em;
+                margin: 0 auto;
+                width: max-content;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border: none;
+                cursor: pointer;
+            }
+            
+            .catalog-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(0, 92, 185, 0.4);
+                background: linear-gradient(45deg, #0088cc, #005cb9);
+            }
+            
+            /* סגנון תגובתי להגדלת כפתור הקטלוגים במובייל */
+            @media (max-width: 768px) {
+                .catalog-button {
+                    padding: 20px 36px;
+                    font-size: 1.35em;
+                    border-radius: 12px;
+                    width: 85%;
+                    max-width: 350px;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+                }
+                
+                .catalog-button i {
+                    font-size: 1.6em !important;
+                    margin-left: 15px !important;
+                }
+            }
+            
+            /* הגדלה נוספת במסכים קטנים מאוד */
+            @media (max-width: 480px) {
+                .catalog-button {
+                    padding: 22px 30px;
+                    width: 90%;
+                }
+            }
+            
+            .catalog-button:active {
+                transform: translateY(1px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .catalog-button i {
+                font-size: 1.2em;
+            }
+            
+            .catalog-button-description {
+                display: block;
+                font-size: 0.8em;
+                font-weight: normal;
+                margin-top: 5px;
+                opacity: 0.9;
+                text-align: center;
+            }
+            
+            /* התאמה למובייל */
+            @media (max-width: 768px) {
+                .catalog-button {
+                    padding: 12px 20px;
+                    font-size: 0.9em;
+                }
+            }
+        </style>
+
+        <!-- תרגומים נוספים -->
+        <script>
+            // הוספת מפתחות תרגום חדשים
+            if (translations && translations.he) {
+                translations.he.ui.newCatalogButton = "צפה בקטלוגים";
+            }
+            if (translations && translations.en) {
+                translations.en.ui.newCatalogButton = "View Catalogs";
+            }
+            if (translations && translations.zh) {
+                translations.zh.ui.newCatalogButton = "查看目录";
+            }
+        </script>
+
+        <!-- סרגל צד קטלוגים -->
+        <div id="catalogSidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3 class="translatable" data-key="catalog.title">קטלוגים</h3>
+                <button class="close-sidebar translatable" data-key="ui.closeCatalog" onclick="toggleSidebar()">&times;</button>
+            </div>
+            <div class="sidebar-content">
+                <!-- ריהוט -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('furniture')" class="translatable" data-key="catalog.furniture">ריהוט</h4>
+                    <div id="furniture" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/8Qyup" target="_blank" class="translatable" data-key="catalog.sofas">ספות</a>
+                        <a href="https://lp6.me/MZKP3" target="_blank" class="translatable" data-key="catalog.barChairs">כיסאות בר</a>
+                        <a href="https://lp6.me/hUYAQ" target="_blank" class="translatable" data-key="catalog.armchairs">כורסאות+ספות</a>
+                        <a href="https://lp6.me/snhha" target="_blank" class="translatable" data-key="catalog.luxurySofas1">ספות יוקרה 1</a>
+                        <a href="https://lp6.me/y0Xcx" target="_blank" class="translatable" data-key="catalog.luxurySofas2">ספות יוקרה 2</a>
+                        <a href="https://lp6.me/XjGWY" target="_blank" class="translatable" data-key="catalog.beds">מיטות</a>
+                    </div>
+                </div>
+
+                <!-- ספא -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('spa')" class="translatable" data-key="catalog.spa">ספא</h4>
+                    <div id="spa" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/tdZzu" target="_blank" class="translatable" data-key="catalog.swimmingCurrents">בריכת זרמים</a>
+                        <a href="https://lp6.me/sG6yQ" target="_blank" class="translatable" data-key="catalog.jacuzzi">ג'קוזי</a>
+                        <a href="https://lp6.me/Af7eO" target="_blank" class="translatable" data-key="catalog.massageChairs">כורסאות עיסוי</a>
+                        <a href="https://lp6.me/sACMN" target="_blank" class="translatable" data-key="catalog.massageGlasses">משקפי עיסוי</a>
+                    </div>
+                </div>
+
+                <!-- ציוד לעסקים -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('electrical')" class="translatable" data-key="catalog.businessEquipment">ציוד לעסקים</h4>
+                    <div id="electrical" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/uLv04" target="_blank" class="translatable" data-key="catalog.outdoorScreens">מסכי חוץ</a>
+                        <a href="https://lp6.me/sM8V1" target="_blank" class="translatable" data-key="catalog.ledScreens">מסכי לד</a>
+                    </div>
+                </div>
+
+                <!-- ריהוט גן -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('garden')" class="translatable" data-key="catalog.gardenFurniture">ריהוט גן</h4>
+                    <div id="garden" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/Icq4b" target="_blank" class="translatable" data-key="catalog.syntheticGrass">דשא סינתטי</a>
+                        <a href="https://lp6.me/6Fmy1" target="_blank" class="translatable" data-key="catalog.houseShade">סכך לבית</a>
+                    </div>
+                </div>
+
+                <!-- חיפויים -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('covering')" class="translatable" data-key="catalog.covering">חיפויים</h4>
+                    <div id="covering" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/UTYvj" target="_blank" class="translatable" data-key="catalog.woodCovering">חיפוי דמוי עץ</a>
+                        <a href="https://lp6.me/kXZgV" target="_blank" class="translatable" data-key="catalog.exteriorCovering">חיפוי חוץ</a>
+                    </div>
+                </div>
+
+                <!-- מבנים ניידים -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('mobile')" class="translatable" data-key="catalog.mobileStructures">מבנים ניידים</h4>
+                    <div id="mobile" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/iNCOx" target="_blank" class="translatable" data-key="catalog.igloo">איגלו</a>
+                        <a href="https://lp6.me/Tsysy" target="_blank" class="translatable" data-key="catalog.vacationUnits">יחידות נופש</a>
+                    </div>
+                </div>
+
+                <!-- מבנה וגימור -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('structure')" class="translatable" data-key="catalog.structure">מבנה וגימור</h4>
+                    <div id="structure" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/oUghk" target="_blank" class="translatable" data-key="catalog.windowsGlassDoors">חלונות + דלתות זכוכית</a>
+                        <a href="https://lp6.me/Nl1ey" target="_blank" class="translatable" data-key="catalog.villa">וילה</a>
+                        <a href="https://lp6.me/4Xrbg" target="_blank" class="translatable" data-key="catalog.pergolas">פרגולות</a>
+                        <a href="https://lp6.me/VaSf6" target="_blank" class="translatable" data-key="catalog.shade">סכך</a>
+                        <a href="https://lp6.me/KuSxh" target="_blank" class="translatable" data-key="catalog.doors">דלתות</a>
+                    </div>
+                </div>
+
+                <!-- ציוד משרדי -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('office')" class="translatable" data-key="catalog.office">ציוד משרדי</h4>
+                    <div id="office" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/aIcAa" target="_blank" class="translatable" data-key="catalog.papers">דפים</a>
+                    </div>
+                </div>
+
+                <!-- ספורט ימי -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('sport')" class="translatable" data-key="catalog.seaSport">ספורט ימי</h4>
+                    <div id="sport" class="catalog-items" style="display: none;">
+                        <a href="https://lp6.me/kd2BP" target="_blank" class="translatable" data-key="catalog.boats">סירות</a>
+                    </div>
+                </div>
+
+                <!-- ילדים ותינוקות -->
+                <div class="catalog-category">
+                    <h4 onclick="toggleCatalogMenu('kids')" class="translatable" data-key="catalog.kidsAndBabies">ילדים ותינוקות</h4>
+                    <div id="kids" class="catalog-items" style="display: none;">
+                        <a href="#" target="_blank" class="translatable" data-key="catalog.comingSoon">בהקמה...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- חלון מידע קטלוג -->
+        <div id="catalogInfoModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="catalogTitle"></h3>
+                    <button class="close-modal" onclick="closeCatalogInfo()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="catalogDescription"></div>
+                    <div class="catalog-image" id="catalogImage"></div>
+                    <div class="catalog-details">
+                        <p><strong class="translatable" data-key="catalog.productCount">מספר מוצרים: </strong><span id="catalogProductCount"></span></p>
+                        <p><strong class="translatable" data-key="catalog.manufacturingCountries">מדינות ייצור: </strong><span id="catalogCountries"></span></p>
+                        <p><strong class="translatable" data-key="catalog.averageDeliveryTime">זמן אספקה ממוצע: </strong><span id="catalogDeliveryTime"></span></p>
+                    </div>
+                    <button class="request-btn translatable" onclick="requestCatalog()" data-key="ui.requestCatalog">בקש קטלוג זה</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- אזור שירותים -->
+        <section class="services" id="services" itemscope itemtype="https://schema.org/Service">
+            <h2><span class="chinese-icon" aria-hidden="true">&#x1F5FA;</span> <span itemprop="name" class="translatable" data-key="services.title">השירותים שלנו</span> <span class="chinese-icon" aria-hidden="true">&#x1F5FA;</span></h2>
+            <div class="services-container">
+                <div class="service-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                    <div class="service-icon" aria-hidden="true" role="presentation"><i class="fas fa-search" style="color: #ffffff;"></i></div>
+                    <h3 itemprop="name" class="translatable" data-key="services.point1Title">איתור ספקים</h3>
+                    <p itemprop="description" class="translatable" data-key="services.point1Desc">אנו מאתרים עבורך את הספקים האיכותיים ביותר בעולם במחירים התחרותיים ביותר.</p>
+                </div>
+                <div class="service-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                    <div class="service-icon" aria-hidden="true" role="presentation"><i class="fas fa-file-contract" style="color: #ffffff;"></i></div>
+                    <h3 itemprop="name" class="translatable" data-key="services.point2Title">התנהלות מול ספקים</h3>
+                    <p itemprop="description" class="translatable" data-key="services.point2Desc">אנו מנהלים את כל התקשורת והמשא ומתן מול הספקים בחו"ל בשפתם.</p>
+                </div>
+                <div class="service-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                    <div class="service-icon" aria-hidden="true" role="presentation"><i class="fas fa-truck" style="color: #ffffff;"></i></div>
+                    <h3 itemprop="name" class="translatable" data-key="services.point4Title">שילוח ולוגיסטיקה</h3>
+                    <p itemprop="description" class="translatable" data-key="services.point4Desc">אנו מטפלים בכל היבטי המשלוח, ההובלה והמכס עבור המוצרים שלך.</p>
+                </div>
+                <div class="service-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                    <div class="service-icon" aria-hidden="true" role="presentation"><i class="fas fa-chart-bar" style="color: #ffffff;"></i></div>
+                    <h3 itemprop="name" class="translatable" data-key="services.point4Title">בדיקת איכות</h3>
+                    <p itemprop="description" class="translatable" data-key="services.point4Desc">אנו מבצעים בדיקות איכות מקיפות למוצרים לפני שילוחם לישראל.</p>
+                </div>
+                <div class="service-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                    <div class="service-icon" aria-hidden="true" role="presentation"><i class="fas fa-briefcase" style="color: #ffffff;"></i></div>
+                    <h3 itemprop="name" class="translatable" data-key="services.point5Title">ייעוץ עסקי</h3>
+                    <p itemprop="description" class="translatable" data-key="services.point5Desc">אנו מספקים ייעוץ מקצועי לפיתוח והרחבת עסקים באמצעות יבוא.</p>
+                </div>
+                <div class="service-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                    <div class="service-icon" aria-hidden="true" role="presentation"><i class="fas fa-sync" style="color: #ffffff;"></i></div>
+                    <h3 itemprop="name" class="translatable" data-key="services.point6Title">ליווי מתמשך</h3>
+                    <p itemprop="description" class="translatable" data-key="services.point6Desc">אנו מלווים את הלקוחות שלנו לאורך כל התהליך ומספקים תמיכה מתמשכת.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- אזור כך זה עובד - היבוא בשלבים -->
+        <section id="how-it-works" style="padding: 40px 20px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; margin: 30px 0;">
+            <h2 style="text-align:center; font-size: 28px; margin-bottom: 30px;"><span class="chinese-icon">&#x1F4C8;</span> <span class="translatable" data-key="process.title">כך זה עובד – היבוא בשלבים</span> <span class="chinese-icon">&#x1F4C8;</span></h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <div style="flex: 1 1 200px; max-width: 250px; background: rgba(0, 85, 170, 0.2); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;" class="translatable" data-key="process.step1Title">1. איתור מוצר</h3>
+                    <p class="translatable" data-key="process.step1Desc">נאתר את המוצר המתאים לפי דרישה – כולל ניתוח שוק וספקים פוטנציאליים</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 250px; background: rgba(0, 85, 170, 0.2); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;" class="translatable" data-key="process.step2Title">2. בדיקת ספקים</h3>
+                    <p class="translatable" data-key="process.step2Desc">בדיקת רקע, חוות דעת, תקנים ואישור מפעל</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 250px; background: rgba(0, 85, 170, 0.2); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;" class="translatable" data-key="process.step3Title">3. דוגמאות</h3>
+                    <p class="translatable" data-key="process.step3Desc">הזמנת דוגמה למשרד בסין, בדיקה וצילום Live</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 250px; background: rgba(0, 85, 170, 0.2); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;" class="translatable" data-key="process.step4Title">4. בדיקת איכות</h3>
+                    <p class="translatable" data-key="process.step4Desc">צוות בקרת איכות מבצע בדיקה טרם שילוח</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 250px; background: rgba(0, 85, 170, 0.2); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;" class="translatable" data-key="process.step5Title">5. שילוח ולוגיסטיקה</h3>
+                    <p class="translatable" data-key="process.step5Desc">ניהול משלוח מלא כולל עמילות מכס ואספקה</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 250px; background: rgba(0, 85, 170, 0.2); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="color: #ffcc00; margin-bottom: 10px;" class="translatable" data-key="process.step6Title">6. ביטחון לכסף</h3>
+                    <p class="translatable" data-key="process.step6Desc">תשלומים מדורגים, שקיפות מלאה וליווי עד קבלת הסחורה</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- אזור יתרונות -->
+        <section class="benefits">
+            <div class="benefits-container">
+                <div class="benefits-text">
+                    <h2 data-chinese="为什么选择我们" ><span class="chinese-icon">&#x1F3DB;</span> <span class="translatable" data-key="whyUs.title">למה לבחור ב-VIPO?</span> <span class="chinese-icon">&#x1F3DB;</span></h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <span class="benefit-icon" style="margin-left: 15px;"><i class="fas fa-medal" style="color: #f1c40f;"></i></span>
+                            <div class="benefit-content">
+                                <h3 class="translatable" data-key="whyUs.expertise">מומחיות וניסיון</h3>
+                                <p class="translatable" data-key="whyUs.expertiseDesc">צוות המומחים שלנו מביא עמו שנים רבות של ניסיון בתחום היבוא והסחר הבינלאומי.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="benefit-icon" style="margin-left: 15px;"><i class="fas fa-piggy-bank" style="color: #f1c40f;"></i></span>
+                            <div class="benefit-content">
+                                <h3 class="translatable" data-key="whyUs.savings">חיסכון כספי משמעותי</h3>
+                                <p class="translatable" data-key="whyUs.savingsDesc">הקשרים הישירים שלנו עם יצרנים וספקים מאפשרים לנו להשיג מחירים תחרותיים במיוחד.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="benefit-icon" style="margin-left: 15px;"><i class="fas fa-clock" style="color: #f1c40f;"></i></span>
+                            <div class="benefit-content">
+                                <h3 class="translatable" data-key="whyUs.timeSaving">חיסכון זמן</h3>
+                                <p class="translatable" data-key="whyUs.timeSavingDesc">אנו מטפלים בכל הפרטים הטכניים והלוגיסטיים, מה שמאפשר לך להתמקד בניהול העסק שלך.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="benefit-icon" style="margin-left: 15px;"><i class="fas fa-globe" style="color: #f1c40f;"></i></span>
+                            <div class="benefit-content">
+                                <h3 class="translatable" data-key="whyUs.globalAccess">נגישות גלובלית</h3>
+                                <p class="translatable" data-key="whyUs.globalAccessDesc">הקשרים שלנו מתפרשים בכל רחבי העולם, מה שמאפשר לנו לאתר את המוצרים הטובים ביותר מכל מקום.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefits-image">
+                    <div class="image-container">
+                        <div id="earth-container" class="globe-effect"></div>
+                    </div>
+                </div>
+                <style>
+                    .benefits-image {
+                        flex: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .image-container {
+                        width: 100%;
+                        height: 300px;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .globe-effect {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 300px;
+                        max-height: 300px;
+                        margin: 0 auto;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        box-shadow: 0 0 20px rgba(0, 89, 255, 0.6);
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .image-container {
+                            height: 250px;
+                        }
+                        
+                        .globe-effect {
+                            max-width: 250px;
+                            max-height: 250px;
+                        }
+                    }
+                </style>
+            </div>
+        </section>
+
+        <!-- אזור המלצות לקוחות -->
+        <section id="testimonials" class="testimonials-section" itemscope itemtype="https://schema.org/Review">
+            <div class="section-header">
+                <h2 class="testimonials-title">
+                    <span class="testimonials-title-icon">❝</span>
+                    <span class="translatable" data-key="testimonials.title">לקוחות מספרים</span>
+                    <span class="testimonials-title-icon">❞</span>
+                </h2>
+            </div>
+            
+            <div class="testimonials-compact">
+                    <!-- כרטיס המלצה 1 -->
+                    <div class="testimonial-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote" itemprop="reviewBody">
+                            <p class="translatable" data-key="testimonials.quote1">"ייבאתי לחנות שלי מוצרים בפעם הראשונה דרך VIPO. הם טיפלו בכל התהליך מא' עד ת' וחסכו לי המון כסף וכאבי ראש."</p>
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">ר</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                    <span itemprop="name" class="translatable" data-key="testimonials.author1">רונית</span>
+                                </div>
+                                <div class="testimonial-business" class="translatable" data-key="testimonials.business1">עיצוב הבית</div>
+                            </div>
+                        </div>
+                        <meta itemprop="datePublished" content="2023-05-15">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </div>
+                    
+                    <!-- כרטיס המלצה 2 -->
+                    <div class="testimonial-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote" itemprop="reviewBody">
+                            <p class="translatable" data-key="testimonials.quote2">"חיפשתי ספק למיטות, VIPO איתרו לי מפעל מדהים עם מחיר חצי מהארץ – הגעתי לישראל עם מכולה תוך חודשיים!"</p>
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">א</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                    <span itemprop="name" class="translatable" data-key="testimonials.author2">אורית</span>
+                                </div>
+                                <div class="testimonial-business" class="translatable" data-key="testimonials.business2">חנות ריהוט</div>
+                            </div>
+                        </div>
+                        <meta itemprop="datePublished" content="2023-08-20">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </div>
+                    
+                    <!-- כרטיס המלצה 3 -->
+                    <div class="testimonial-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-quote" itemprop="reviewBody">
+                            <p class="translatable" data-key="testimonials.quote3">"הנציגים של VIPO דאגו לתקשר עם היצרנים בסין בשפה שלהם. זה חסך לי המון זמן וכסף וקיבלתי בדיוק את המוצרים שרציתי."</p>
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">י</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                    <span itemprop="name" class="translatable" data-key="testimonials.author3">יוסי</span>
+                                </div>
+                                <div class="testimonial-business" class="translatable" data-key="testimonials.business3">אלקטרוניקה</div>
+                            </div>
+                        </div>
+                        <meta itemprop="datePublished" content="2023-12-10">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </div>
+            </div>
+            
+            <!-- כפתור שיתוף חוויה -->
+            <div style="text-align: center; margin: 15px auto 5px auto;">
+                <a href="javascript:void(0)" onclick="shareExperience()" class="share-experience-btn">
+                    <svg class="share-icon" viewBox="0 0 24 24">
+                        <path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                    </svg>
+                    <span class="translatable" data-key="testimonials.shareExperience">שתף את החוויה שלך</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2><span class="chinese-icon" aria-hidden="true">&#x260E;</span> <span class="translatable" data-key="contact.title">Contact Us</span> <span class="chinese-icon" aria-hidden="true">&#x260E;</span></h2>
+            <div class="contact-form">
+                <form id="contact-form" action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="translatable" data-key="contact.name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="translatable" data-key="contact.email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="translatable" data-key="contact.phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="translatable" data-key="contact.message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn translatable" data-key="contact.submit">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-new">
+            <!-- שכבת גלים SVG -->
+            <div class="wave-container">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,60,120,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,70,140,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,90,170,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#00395d" />
+                    </g>
+                </svg>
+            </div>
+            
+            <!-- תוכן הפוטר -->
+            <div class="footer-content">
+                <div class="footer-container">
+                    <div class="footer-row">
+                        <!-- חלק 1: פרטי יצירת קשר -->
+                        <div class="footer-col contact-info">
+                            <h3 class="footer-heading translatable" data-key="footer.quickContact" data-html="true">צור קשר מהיר</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">
+                                        <span class="contact-label translatable" data-key="footer.phone">טלפון:</span>
+                                        <a href="tel:+972587009938" dir="ltr">058-7009938</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">
+                                        <span class="contact-label translatable" data-key="footer.whatsapp">וואטסאפ:</span>
+                                        <a href="https://wa.me/972587009938" dir="ltr">058-7009938</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                    <div class="contact-text">
+                                        <span class="contact-label translatable" data-key="footer.email">אימייל:</span>
+                                        <a href="mailto:info@vipo.co.il">info@vipo.co.il</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="contact-text">
+                                        <span class="contact-label translatable" data-key="footer.address">כתובת:</span>
+                                        <span class="translatable" data-key="footer.addressValue">רחוב היצירה 13, רעננה</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- חלק 2: המפה האינטראקטיבית -->
+                        <div class="footer-col map-container">
+                            <div class="world-map">
+                                <div class="map-overlay"></div>
+                                <div class="pin israel-pin" title="ישראל" data-title-key="map.israel" data-localize="title"><span class="pin-pulse"></span></div>
+                                <div class="pin china-pin" title="סין" data-title-key="map.china" data-localize="title"><span class="pin-pulse"></span></div>
+                                <div class="route-line"></div>
+                                <div class="route-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- חלק 3: קישורים מהירים ורשתות חברתיות -->
+                        <div class="footer-col links-social">
+                            <div class="quick-links-container">
+                                <h3 class="footer-heading translatable" data-key="footer.quickLinks" data-html="true">קישורים מהירים</h3>
+                                <ul class="quick-links">
+                                    <li><a href="index.html" class="translatable" data-key="footer.home" data-html="true">דף הבית</a></li>
+                                    <li><a href="#services" class="translatable" data-key="footer.services" data-html="true">השירותים שלנו</a></li>
+                                    <li><a href="#contact" class="translatable" data-key="footer.contact" data-html="true">צור קשר</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="social-icon linkedin">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- זכויות יוצרים -->
+                    <div class="copyright">
+                        <p>&copy; 2025 VIPO<br><span class="translatable" data-key="footer.copyright" data-html="true">כל הזכויות שמורות.</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- כפתור חזרה למעלה -->
+            <div class="back-to-top" id="backToTop" title="חזרה למעלה">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </footer>
+
+        <!-- הוספת Font Awesome Icons - לאייקונים -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        
+        <!-- סקריפט לכפתור חזרה למעלה ואנימציית המפה -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var backToTopBtn = document.getElementById('backToTop');
+                
+                // הצגת הכפתור כשגוללים למטה
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.style.opacity = '1';
+                        backToTopBtn.style.visibility = 'visible';
+                    } else {
+                        backToTopBtn.style.opacity = '0';
+                        backToTopBtn.style.visibility = 'hidden';
+                    }
+                });
+                
+                // גלילה למעלה כשלוחצים על הכפתור
+                backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+                
+                // אנימציית המפה
+                animateRoute();
+            });
+            
+            // פונקציית אנימציה למפה
+            function animateRoute() {
+                const routeDot = document.querySelector('.route-dot');
+                if (!routeDot) return;
+                
+                let forward = true;
+                let progress = 0;
+                const animationSpeed = 0.005;
+                
+                function moveShip() {
+                    if (forward) {
+                        progress += animationSpeed;
+                        if (progress >= 1) {
+                            progress = 1;
+                            forward = false;
+                        }
+                    } else {
+                        progress -= animationSpeed;
+                        if (progress <= 0) {
+                            progress = 0;
+                            forward = true;
+                        }
+                    }
+                    
+                    // עדכון מיקום הנקודה על הקו
+                    const x = 28 + progress * 44; // משמאל לימין
+                    const y = 60 - Math.sin(progress * Math.PI) * 10; // קשת קטנה
+                    
+                    routeDot.style.left = x + '%';
+                    routeDot.style.top = y + '%';
+                    
+                    requestAnimationFrame(moveShip);
+                }
+                
+                moveShip();
+            }
+        </script>
+
+        <!-- הכפתור לגלילה למעלה נמצא כעת בתוך הפוטר -->
+        <!-- אנו משתמשים באלמנט back-to-top במקום -->
+        
+        <!-- אייקון וואטסאפ ריאליסטי -->
+        <a href="https://wa.me/972587009938" class="realistic-whatsapp" target="_blank" id="realistic-whatsapp-icon" aria-label="WhatsApp">
+            <div class="realistic-whatsapp-icon">
+                <div class="realistic-whatsapp-circle"></div>
+                <div class="realistic-whatsapp-logo"></div>
+                <div class="realistic-whatsapp-tooltip" id="whatsapp-tooltip"></div>
+            </div>
+        </a>
+        
+        <script>
+            // עדכון התרגום לאייקון וואטסאפ המרחף
+            function updateWhatsappTooltip(lang) {
+                const tooltip = document.getElementById('whatsapp-tooltip');
+                if (tooltip) {
+                    const translatedText = translations[lang]?.ui?.whatsapp || 'Contact via WhatsApp';
+                    tooltip.textContent = translatedText;
+                    console.log(`Updated WhatsApp tooltip to: ${translatedText} (${lang})`);
+                }
+            }
+            
+            // הוספת פונקציית עדכון תרגום וואטסאפ לפונקציית עדכון התרגומים הכללית
+            // קוד להסרת אייקונים כפולים מצד שלישי אם קיימים
+            document.addEventListener('DOMContentLoaded', function() {
+                // חיפוש והסרת אייקוני וואטסאפ אחרים
+                setTimeout(function() {
+                    const commonWhatsappSelectors = [
+                        '.whatsapp-icon', '.whatsapp-button', '.wa-icon', 
+                        '.floating-wpp', '.wpp-button', '.wa-float',
+                        '.whatsapp-float', '.wa-widget', '.whatsapp-widget'
+                    ];
+                    
+                    commonWhatsappSelectors.forEach(selector => {
+                        const elements = document.querySelectorAll(selector);
+                        if (elements.length > 0) {
+                            console.log(`Found and removing ${elements.length} external WhatsApp elements with selector ${selector}`);
+                            elements.forEach(el => {
+                                if (el.id !== 'realistic-whatsapp-icon') {
+                                    el.style.display = 'none';
+                                }
+                            });
+                        }
+                    });
+                }, 1000);
+                
+                // עדכון הטולטיפ של וואטסאפ
+                const originalUpdateAllTranslations = updateAllTranslations;
+                updateAllTranslations = function(lang) {
+                    originalUpdateAllTranslations(lang);
+                    updateWhatsappTooltip(lang);
+                };
+                
+                // קריאה ראשונית לעדכון הטולטיפ
+                const currentLang = document.documentElement.lang;
+                updateWhatsappTooltip(currentLang);
+            });
+        </script>
+        
+
+        <!-- קוד JavaScript לאינטראקטיביות -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // אנימציית מעבר בין הסקשנים
+                const sections = document.querySelectorAll('section');
+                
+                const sectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('section-visible');
+                        } else {
+                            entry.target.classList.remove('section-visible');
+                        }
+                    });
+                }, { threshold: 0.2 });
+                
+                sections.forEach(section => {
+                    section.classList.add('section-animated');
+                    sectionObserver.observe(section);
+                });
+                
+                // אנימציית מטבעות זהב נופלים
+                const coinsContainer = document.getElementById('coinsContainer');
+                let lastScrollTop = 0;
+                let coinTimeout;
+                
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // בודק אם המשתמש גולל למטה במהירות
+                    if (scrollTop > lastScrollTop + 50) {
+                        // מנקה את הטיימר הקודם
+                        clearTimeout(coinTimeout);
+                        
+                        // מפיל מטבעות
+                        createCoins();
+                        
+                        // מגדיר טיימר לניקוי המטבעות לאחר האנימציה
+                        coinTimeout = setTimeout(() => {
+                            while (coinsContainer.firstChild) {
+                                coinsContainer.removeChild(coinsContainer.firstChild);
+                            }
+                        }, 3000);
+                        
+                        lastScrollTop = scrollTop;
+                    } else {
+                        lastScrollTop = scrollTop;
+                    }
+                });
+                
+                function createCoins() {
+                    // יצירת 5-10 מטבעות במיקומים אקראיים
+                    const coinCount = Math.floor(Math.random() * 6) + 5;
+                    
+                    for (let i = 0; i < coinCount; i++) {
+                        const coin = document.createElement('div');
+                        coin.className = 'chinese-coin';
+                        
+                        // מיקום אקראי ברוחב המסך
+                        const randomLeft = Math.random() * 100;
+                        coin.style.left = `${randomLeft}%`;
+                        
+                        // מהירות נפילה אקראית
+                        const fallDuration = Math.random() * 2 + 2; // 2-4 שניות
+                        coin.style.animationDuration = `${fallDuration}s`;
+                        
+                        // גודל אקראי
+                        const size = Math.random() * 20 + 20; // 20-40px
+                        coin.style.width = `${size}px`;
+                        coin.style.height = `${size}px`;
+                        
+                        // הוספת המטבע למכולה
+                        coinsContainer.appendChild(coin);
+                        
+                        // הסרת המטבע לאחר סיום האנימציה
+                        setTimeout(() => {
+                            if (coin.parentNode === coinsContainer) {
+                                coinsContainer.removeChild(coin);
+                            }
+                        }, fallDuration * 1000);
+                    }
+                }
+                // האנימציה של כרטיסי השירותים
+                const serviceCards = document.querySelectorAll('.service-card');
+                serviceCards.forEach((card, index) => {
+                    card.style.setProperty('--i', index + 1);
+                });
+
+                // האנימציה של רשימת היתרונות
+                const benefitItems = document.querySelectorAll('.benefits-list li');
+                benefitItems.forEach((item, index) => {
+                    item.style.setProperty('--i', index + 1);
+                });
+
+                // הטיפול בטופס צור קשר
+                const contactForm = document.getElementById('contactForm');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // איסוף הנתונים מהטופס
+                        const name = document.getElementById('name').value;
+                        const email = document.getElementById('email').value;
+                        const phone = document.getElementById('phone').value;
+                        const subject = document.getElementById('subject').value;
+                        const message = document.getElementById('message').value;
+                        
+                        // כאן יכול להיות קוד לשליחת הנתונים לשרת
+                        // לצורך הדגמה, אנחנו רק מציגים הודעת הצלחה
+                        
+                        // יצירת אלמנט הודעה
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.innerHTML = `
+                            <div class="success-content">
+                                <h3>תודה שפנית אלינו, ${name}!</h3>
+                                <p>קיבלנו את הודעתך בנושא "${subject}".</p>
+                                <p>ניצור איתך קשר בהקדם.</p>
+                                <button class="close-btn">סגור</button>
+                            </div>
+                        `;
+                        document.body.appendChild(successMessage);
+                        
+                        // הוספת אפקט הופעה
+                        setTimeout(() => {
+                            successMessage.classList.add('show');
+                        }, 10);
+                        
+                        // הוספת אירוע לחיצה על כפתור הסגירה
+                        const closeBtn = successMessage.querySelector('.close-btn');
+                        closeBtn.addEventListener('click', function() {
+                            successMessage.classList.remove('show');
+                            setTimeout(() => {
+                                document.body.removeChild(successMessage);
+                            }, 300);
+                        });
+                        
+                        // איפוס הטופס
+                        contactForm.reset();
+                    });
+                }
+
+                // כפתור גלילה למעלה
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.add('show');
+                    } else {
+                        scrollToTopBtn.classList.remove('show');
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+                // ניווט חלק
+                const links = document.querySelectorAll('a[href^="#"]');
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        if (this.getAttribute('href') === '#') return;
+                        
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 70,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            });
+
+            // פונקציות לסרגל הצד וחלון המידע
+            function toggleSidebar() {
+                const sidebar = document.getElementById('catalogSidebar');
+                sidebar.classList.toggle('open');
+            }
+
+            // מידע על הקטלוגים
+            const catalogData = {
+                'electronics': {
+                    title: 'מוצרי אלקטרוניקה',
+                    description: 'קטלוג מקיף של מוצרי אלקטרוניקה מהיצרנים המובילים בעולם. כולל טלפונים ניידים, מחשבים, מצלמות, מכשירי חשמל ביתיים ועוד.',
+                    image: 'linear-gradient(45deg, #0077b6, #00b4d8)',
+                    productCount: '5,000+',
+                    countries: 'סין, יפן, דרום קוריאה, ארה"ב',
+                    deliveryTime: '3-4 שבועות'
+                },
+                'home': {
+                    title: 'מוצרים לבית',
+                    description: 'מגוון רחב של מוצרים לעיצוב הבית, ריהוט, כלי בית, טקסטיל ביתי ומוצרי נוי. מוצרים באיכות גבוהה במחירים אטרקטיביים.',
+                    image: 'linear-gradient(45deg, #588157, #a3b18a)',
+                    productCount: '8,000+',
+                    countries: 'איטליה, סין, הודו, תורכיה',
+                    deliveryTime: '4-6 שבועות'
+                },
+                'fashion': {
+                    title: 'אופנה וטקסטיל',
+                    description: 'קטלוג מקיף של מוצרי אופנה, בגדים, נעליים, אביזרים וטקסטיל. מוצרים באיכות גבוהה במחירים תחרותיים.',
+                    image: 'linear-gradient(45deg, #0055aa, #00a8e8)',
+                    productCount: '10,000+',
+                    countries: 'איטליה, תורכיה, הודו, בנגלדש',
+                    deliveryTime: '3-5 שבועות'
+                },
+                'machinery': {
+                    title: 'מכונות וציוד',
+                    description: 'קטלוג מקיף של מכונות תעשייתיות, ציוד ייצור, כלי עבודה וציוד מקצועי. מוצרים באיכות גבוהה ובמחירים תחרותיים.',
+                    image: 'linear-gradient(45deg, #343a40, #6c757d)',
+                    productCount: '3,500+',
+                    countries: 'גרמניה, יפן, סין, איטליה',
+                    deliveryTime: '6-8 שבועות'
+                },
+                'construction': {
+                    title: 'חומרי בנייה',
+                    description: 'קטלוג מקיף של חומרי בנייה, ציוד בנייה, אביזרים ומוצרים נלווים לתחום הבנייה והשיפוצים.',
+                    image: 'linear-gradient(45deg, #774936, #ca6702)',
+                    productCount: '4,500+',
+                    countries: 'איטליה, סין, תורכיה, ספרד',
+                    deliveryTime: '5-7 שבועות'
+                },
+                'chemicals': {
+                    title: 'כימיקלים וחומרי גלם',
+                    description: 'קטלוג מקיף של כימיקלים תעשייתיים, חומרי גלם, תוספים ומוצרים כימיים לתעשייה.',
+                    image: 'linear-gradient(45deg, #184e77, #1e6091)',
+                    productCount: '2,800+',
+                    countries: 'גרמניה, ארה"ב, סין, הודו',
+                    deliveryTime: '4-6 שבועות'
+                },
+                'tech': {
+                    title: 'טכנולוגיה מתקדמת',
+                    description: 'קטלוג מקיף של מוצרי טכנולוגיה מתקדמת, רכיבים אלקטרוניים, ציוד תקשורת ומוצרי טכנולוגיה חדשניים.',
+                    image: 'linear-gradient(45deg, #3a0ca3, #4361ee)',
+                    productCount: '3,200+',
+                    countries: 'ארה"ב, יפן, דרום קוריאה, גרמניה',
+                    deliveryTime: '3-5 שבועות'
+                },
+                'medical': {
+                    title: 'ציוד רפואי',
+                    description: 'קטלוג מקיף של ציוד רפואי, מכשירים רפואיים, מוצרי בריאות וציוד למרפאות ובתי חולים.',
+                    image: 'linear-gradient(45deg, #2a9d8f, #57cc99)',
+                    productCount: '2,500+',
+                    countries: 'גרמניה, ארה"ב, יפן, שוויץ',
+                    deliveryTime: '4-6 שבועות'
+                },
+                'renewable': {
+                    title: 'אנרגיה מתחדשת',
+                    description: 'קטלוג מקיף של מוצרי אנרגיה מתחדשת, פאנלים סולאריים, טורבינות רוח ומערכות אנרגיה ירוקה.',
+                    image: 'linear-gradient(45deg, #007f5f, #55a630)',
+                    productCount: '1,800+',
+                    countries: 'גרמניה, סין, ארה"ב, דנמרק',
+                    deliveryTime: '5-8 שבועות'
+                }
+            };
+
+            // פונקציה להצגת מידע על קטלוג
+            function showCatalogInfo(catalogId) {
+                const catalog = catalogData[catalogId];
+                if (!catalog) return;
+
+                // מילוי המידע בחלון
+                document.getElementById('catalogTitle').textContent = catalog.title;
+                document.getElementById('catalogDescription').textContent = catalog.description;
+                document.getElementById('catalogImage').style.background = catalog.image;
+                document.getElementById('catalogProductCount').textContent = catalog.productCount;
+                document.getElementById('catalogCountries').textContent = catalog.countries;
+                document.getElementById('catalogDeliveryTime').textContent = catalog.deliveryTime;
+
+                // פתיחת החלון
+                const modal = document.getElementById('catalogInfoModal');
+                modal.classList.add('open');
+                setTimeout(() => {
+                    modal.querySelector('.modal-content').style.opacity = 1;
+                    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+                }, 10);
+            }
+
+            // סגירת חלון המידע
+            function closeCatalogInfo() {
+                const modal = document.getElementById('catalogInfoModal');
+                modal.querySelector('.modal-content').style.opacity = 0;
+                modal.querySelector('.modal-content').style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    modal.classList.remove('open');
+                }, 300);
+            }
+
+            // הורדת קטלוג מלא
+            function downloadFullCatalog() {
+                alert('הקטלוג המלא יישלח לאימייל שלך לאחר מילוי טופס קצר. אנא צור קשר בטופס שבתחתית העמוד.');
+                toggleSidebar();
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // בקשת קטלוג ספציפי
+            function requestCatalog() {
+                const catalogTitle = document.getElementById('catalogTitle').textContent;
+                
+                if (isTouchDevice) {
+                    // הוספת מאזיני אירועים למגע עבור כרטיסי שירותים
+                    const serviceCards = document.querySelectorAll('.service-card');
+                    serviceCards.forEach(card => {
+                        card.addEventListener('touchstart', function() {
+                            this.classList.add('touch-active');
+                        }, { passive: true });
+                        
+                        card.addEventListener('touchend', function() {
+                            this.classList.remove('touch-active');
+                        }, { passive: true });
+                    });
+                    
+                    // הוספת מאזיני אירועים למגע עבור פריטי יתרונות
+                    const benefitItems = document.querySelectorAll('.benefits-list li');
+                    benefitItems.forEach(item => {
+                        item.addEventListener('touchstart', function() {
+                            this.classList.add('touch-active');
+                        }, { passive: true });
+                        
+                        item.addEventListener('touchend', function() {
+                            this.classList.remove('touch-active');
+                        }, { passive: true });
+                    });
+                    
+                    // הוספת מאזיני אירועים למגע עבור קישורי קטלוג
+                    const catalogLinks = document.querySelectorAll('.catalog-category a');
+                    catalogLinks.forEach(link => {
+                        link.addEventListener('touchstart', function() {
+                            this.classList.add('touch-active');
+                        }, { passive: true });
+                        
+                        link.addEventListener('touchend', function() {
+                            this.classList.remove('touch-active');
+                        }, { passive: true });
+                    });
+                    
+                    // מניעת זום בלחיצה כפולה
+                    document.addEventListener('dblclick', function(e) {
+                        e.preventDefault();
+                    }, { passive: false });
+                    
+                    // טיפול במקלדת וירטואלית במובייל
+                    const formInputs = document.querySelectorAll('input, textarea');
+                    formInputs.forEach(input => {
+                        input.addEventListener('focus', function() {
+                            // הוספת ריווח בתחתית הטופס כדי לאפשר גלילה כשהמקלדת פתוחה
+                            document.querySelector('.contact-form').style.marginBottom = '150px';
+                        });
+                        
+                        input.addEventListener('blur', function() {
+                            // הסרת הריווח כשהמקלדת נסגרת
+                            document.querySelector('.contact-form').style.marginBottom = '0';
+                        });
+                    });
+                }
+            });
+        </script>
+
+        <!-- סגנון נוסף לאלמנטים חדשים -->
+    <style>
+        /* סגנון לכפתור גלילה למעלה */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #0055aa, #0088cc);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        html[dir="ltr"] .scroll-top-btn {
+            right: auto;
+            left: 30px;
+        }
+        
+        /* עיצוב אזור לקוחות מספרים */
+        .testimonials-section {
+            padding: 30px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .arrow-up {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .testimonials-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .testimonials-title-icon {
+            display: inline-block;
+            margin: 0 5px;
+            color: #f1c40f; /* צבע זהב */
+            font-size: 20px;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            max-width: 280px;
+            background: rgba(0, 85, 170, 0.2);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: left;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial-quote {
+            position: relative;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+        
+        .testimonial-quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            font-size: 40px;
+            color: rgba(77, 184, 255, 0.3);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .testimonial-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #0088cc;
+            margin-left: 10px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        html[dir="ltr"] .testimonial-avatar {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+        
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-name {
+            color: #f1c40f;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .testimonial-business {
+            color: #ffffff;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .testimonial-rating {
+            margin-top: 8px;
+            display: flex;
+            direction: ltr; /* כוכבים תמיד שמאל לימין */
+        }
+        
+        html[dir="rtl"] .testimonial-rating {
+            justify-content: flex-end;
+        }
+        
+        .star {
+            color: #f1c40f;
+            font-size: 12px;
+            margin-right: 1px;
+        }
+        
+        .testimonials-compact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .share-experience-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            width: 100%;
+            max-width: 200px;
+            margin: 15px auto 10px auto;
+        }
+        
+        .share-experience-btn:hover {
+            transform: scale(1.03);
+        }
+        
+        .share-icon {
+            width: 16px;
+            height: 16px;
+            margin-left: 6px;
+        }
+        
+        html[dir="ltr"] .share-icon {
+            margin-left: 0;
+            margin-right: 6px;
+        }
+        
+        /* סגנון להודעת הצלחה */
+        .success-message {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1100;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
+            }
+            
+            .success-message.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .success-content {
+                background: linear-gradient(135deg, #1a2a6c, #0055aa);
+                padding: 30px;
+                border-radius: 15px;
+                text-align: center;
+                max-width: 400px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                transform: translateY(30px);
+                transition: transform 0.3s;
+            }
+            
+            .success-message.show .success-content {
+                transform: translateY(0);
+            }
+            
+            .success-content h3 {
+                color: #0088cc;
+                margin-bottom: 15px;
+                font-size: 1.5em;
+            }
+            
+            .success-content p {
+                margin-bottom: 10px;
+                color: white;
+            }
+            
+            .close-btn {
+                background: linear-gradient(45deg, #0055aa, #0088cc);
+                color: white;
+                border: none;
+                padding: 10px 25px;
+                border-radius: 50px;
+                font-size: 1em;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s;
+                margin-top: 20px;
+            }
+            
+            .close-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+            }
+
+            /* סגנון סרגל צד קטלוגים */
+            .sidebar {
+                position: fixed;
+                top: 0;
+                right: -350px;
+                width: 350px;
+                height: 100vh;
+                background: linear-gradient(135deg, #0055aa, #0088cc, #003366); 
+                color: white;
+                z-index: 9999;
+                transition: right 0.3s ease-in-out;
+                overflow-y: auto;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .sidebar.open {
+                right: 0;
+            }
+
+            .sidebar-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .sidebar-header h3 {
+                color: white;
+                margin: 0;
+                font-size: 22px;
+            }
+
+            .close-sidebar {
+                background: #0055aa;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all 0.3s;
+            }
+            
+            .close-sidebar:hover {
+                background: #0088cc;
+                transform: scale(1.1);
+            }
+
+            .sidebar-content {
+                padding: 10px 0;
+            }
+
+            .catalog-category {
+                margin-bottom: 5px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .catalog-category h4 {
+                color: white;
+                margin: 0;
+                padding: 15px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .catalog-category h4:hover {
+                background: #003366;
+            }
+
+            .catalog-items {
+                background: #f0f8ff;
+                padding: 0;
+            }
+
+            .catalog-items a {
+                color: #0055aa;
+                padding: 10px 15px;
+                display: block;
+                border-bottom: 1px solid #ddd;
+                font-size: 16px;
+                font-weight: normal;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .catalog-items a:hover {
+                background: #e6f2ff;
+            }
+
+            /* התאמה אישית של פס הגלילה */
+            .sidebar::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .sidebar::-webkit-scrollbar-track {
+                background: #f0f8ff;
+            }
+
+            .sidebar::-webkit-scrollbar-thumb {
+                background: #0055aa;
+                border-radius: 4px;
+            }
+            
+            .download-btn {
+                display: inline-block;
+                background: linear-gradient(45deg, #0055aa, #0088cc);
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 50px;
+                font-weight: bold;
+                transition: all 0.3s;
+            }
+
+            .download-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            /* סגנון חלון מידע קטלוג */
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 1300;
+                justify-content: center;
+                align-items: center;
+                direction: rtl;
+            }
+
+            .modal.open {
+                display: flex;
+            }
+
+            .modal-content {
+                background: linear-gradient(135deg, #1a2a6c, #0055aa);
+                width: 90%;
+                max-width: 600px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                overflow: hidden;
+                transform: scale(0.8);
+                opacity: 0;
+                transition: all 0.3s;
+            }
+
+            .modal.open .modal-content {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .modal-header h3 {
+                color: #0088cc;
+                margin: 0;
+            }
+
+            .close-modal {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+            .close-modal:hover {
+                color: #0088cc;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            #catalogDescription {
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+
+            .catalog-image {
+                height: 200px;
+                margin: 20px 0;
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .catalog-details {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .catalog-details p {
+                margin-bottom: 10px;
+            }
+
+            .catalog-details strong {
+                color: #0088cc;
+            }
+
+            .request-btn {
+                background: linear-gradient(45deg, #0055aa, #0088cc);
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 50px;
+                font-size: 1.1em;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s;
+                display: block;
+                margin: 0 auto;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .request-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            /* התאמה למכשירים ניידים */
+            @media (max-width: 768px) {
+                /* התאמות כלליות */
+                body {
+                    font-size: 16px;
+                }
+                
+                .container {
+                    padding: 15px 10px;
+                }
+                
+                /* התאמת כותרות */
+                header h1 {
+                    font-size: 2em;
+                }
+                
+                .intro-container {
+                    padding: 15px;
+                    margin: 20px auto;
+                }
+                
+                .intro-container h2 {
+                    font-size: 1.5em;
+                }
+                
+                /* התאמת כפתור קטלוגים */
+                [style*="text-align: center; margin-top: 20px; margin-bottom: 20px;"] button {
+                    width: 80%;
+                    max-width: 300px;
+                    padding: 12px;
+                }
+                
+                /* התאמת סרגל צד */
+                .sidebar {
+                    width: 280px;
+                    right: -280px;
+                }
+                
+                /* התאמת חלון מידע */
+                .modal-content {
+                    width: 95%;
+                    max-height: 90vh;
+                    overflow-y: auto;
+                }
+                
+                .catalog-image {
+                    height: 150px;
+                }
+                
+                /* התאמת אזור שירותים */
+                .services-container {
+                    grid-template-columns: 1fr;
+                    gap: 15px;
+                }
+                
+                .service-card {
+                    padding: 20px 15px;
+                }
+                
+                /* התאמת אזור יתרונות */
+                .benefits-container {
+                    flex-direction: column;
+                }
+                
+                .benefits-text, .benefits-image {
+                    width: 100%;
+                }
+                
+                .benefits-image {
+                    margin-top: 30px;
+                }
+                
+                .benefits-list li {
+                    padding: 12px;
+                }
+                
+                .image-container {
+                    width: 200px;
+                    height: 200px;
+                }
+                
+                .globe-effect {
+                    width: 180px;
+                    height: 180px;
+                }
+                
+                /* התאמת טופס צור קשר */
+                .contact-form {
+                    padding: 20px 15px;
+                }
+                
+                .form-group input,
+                .form-group textarea,
+                .form-group select {
+                    padding: 10px;
+                }
+                
+                /* התאמת פוטר */
+                .footer-section {
+                    min-width: 100%;
+                    margin-bottom: 25px;
+                }
+                
+                /* התאמת כפתור גלילה למעלה */
+                .scroll-top-btn {
+                    width: 40px;
+                    height: 40px;
+                    bottom: 20px;
+                    right: 20px;
+                }
+            }
+            
+            /* התאמה למסכים קטנים במיוחד */
+            @media (max-width: 480px) {
+                body {
+                    font-size: 14px;
+                }
+                
+                header h1 {
+                    font-size: 1.8em;
+                }
+                
+                .intro-container h2 {
+                    font-size: 1.3em;
+                }
+                
+                .services h2, .benefits-text h2, .contact h2 {
+                    font-size: 1.6em;
+                }
+                
+                .service-icon {
+                    font-size: 2em;
+                }
+                
+                .benefit-icon {
+                    font-size: 1.5em;
+                }
+                
+                .image-container {
+                    width: 150px;
+                    height: 150px;
+                }
+                
+                .globe-effect {
+                    width: 130px;
+                    height: 130px;
+                }
+                
+                .sidebar {
+                    width: 260px;
+                    right: -260px;
+                }
+                
+                .catalog-category a {
+                    padding: 6px 8px;
+                }
+                
+                .modal-content {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+                
+                .modal-body {
+                    padding: 15px;
+                }
+                
+                .catalog-image {
+                    height: 120px;
+                }
+            }
+            
+            /* סגנון לאפקט מגע במובייל */
+            .touch-active {
+                transform: scale(0.97) !important;
+                opacity: 0.9 !important;
+                transition: transform 0.1s, opacity 0.1s !important;
+            }
+            
+            /* מניעת בחירת טקסט במובייל */
+            @media (max-width: 768px) {
+                .service-card, .benefits-list li, .catalog-category a, .download-btn, .submit-btn, .request-btn, .close-btn {
+                    -webkit-tap-highlight-color: transparent;
+                    -webkit-touch-callout: none;
+                    user-select: none;
+                }
+            }
+            
+            /* עיטורים סיניים בפינות */
+            .chinese-corner {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 10;
+                opacity: 0.5;
+                animation: pulse 3s infinite ease-in-out;
+            }
+            
+            /* אנימציית משי סיני מקצועית */
+            .silk-animation {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                pointer-events: none;
+                overflow: hidden;
+            }
+            
+            .silk-ribbon {
+                position: absolute;
+                background: linear-gradient(to right, rgba(0, 150, 255, 0), rgba(0, 150, 255, 0.7), rgba(0, 150, 255, 0));
+                height: 3px;
+                width: 200px;
+                border-radius: 50%;
+                opacity: 0;
+                filter: blur(1px);
+                box-shadow: 0 0 8px rgba(0, 150, 255, 0.5);
+                transform-origin: right center;
+            }
+            
+            .silk-ribbon.ribbon-1 {
+                top: 20%;
+                right: -200px;
+                animation: ribbonFloat1 15s ease-in-out infinite;
+            }
+            
+            .silk-ribbon.ribbon-2 {
+                top: 40%;
+                right: -200px;
+                animation: ribbonFloat2 20s ease-in-out infinite 2s;
+            }
+            
+            .silk-ribbon.ribbon-3 {
+                top: 60%;
+                right: -200px;
+                animation: ribbonFloat3 18s ease-in-out infinite 5s;
+            }
+            
+            .silk-particles {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: radial-gradient(circle at center, rgba(0, 150, 255, 0.5) 0%, transparent 1%);
+                background-size: 20px 20px;
+                opacity: 0.3;
+                animation: particlesFloat 30s linear infinite;
+            }
+            
+            @keyframes ribbonFloat1 {
+                0% { 
+                    right: -200px; 
+                    transform: rotate(0deg) scaleX(1); 
+                    opacity: 0; 
+                }
+                10% { 
+                    opacity: 0.7; 
+                }
+                50% { 
+                    right: 50%; 
+                    transform: rotate(-5deg) scaleX(1.5); 
+                }
+                90% { 
+                    opacity: 0.7; 
+                }
+                100% { 
+                    right: 120%; 
+                    transform: rotate(0deg) scaleX(1); 
+                    opacity: 0; 
+                }
+            }
+            
+            @keyframes ribbonFloat2 {
+                0% { 
+                    right: -200px; 
+                    transform: rotate(0deg) scaleX(1); 
+                    opacity: 0; 
+                }
+                10% { 
+                    opacity: 0.5; 
+                }
+                50% { 
+                    right: 60%; 
+                    transform: rotate(5deg) scaleX(1.2); 
+                }
+                90% { 
+                    opacity: 0.5; 
+                }
+                100% { 
+                    right: 120%; 
+                    transform: rotate(0deg) scaleX(1); 
+                    opacity: 0; 
+                }
+            }
+            
+            @keyframes ribbonFloat3 {
+                0% { 
+                    right: -200px; 
+                    transform: rotate(0deg) scaleX(1); 
+                    opacity: 0; 
+                }
+                10% { 
+                    opacity: 0.6; 
+                }
+                50% { 
+                    right: 40%; 
+                    transform: rotate(-3deg) scaleX(1.3); 
+                }
+                90% { 
+                    opacity: 0.6; 
+                }
+                100% { 
+                    right: 120%; 
+                    transform: rotate(0deg) scaleX(1); 
+                    opacity: 0; 
+                }
+            }
+            
+            @keyframes particlesFloat {
+                0% { 
+                    background-position: 0 0; 
+                    opacity: 0.2; 
+                }
+                50% { 
+                    opacity: 0.3; 
+                }
+                100% { 
+                    background-position: 100px 100px; 
+                    opacity: 0.2; 
+                }
+            }
+            
+
+            
+            /* אנימציית מעבר בין סקשנים */
+            .section-animated {
+                opacity: 0;
+                transform: translateY(50px);
+                transition: opacity 1s ease-out, transform 1s ease-out;
+                position: relative;
+            }
+            
+            .section-animated::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: 0;
+                width: 100%;
+                height: 20px;
+                background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,204,0,0.1));
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.8s ease-out;
+            }
+            
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .section-visible::before {
+                transform: scaleX(1);
+            }
+            
+            /* מטבעות זהב נופלים */
+            .coins-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 999;
+                overflow: hidden;
+            }
+            
+            .chinese-coin {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMSIgeDE9IjAuMiIgeTE9IjAuMiIgeDI9IjAuOCIgeTI9IjAuOCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JmZTVmZiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDA4OGNjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAzMzY2Ii8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImcyIiBjeD0iMC41IiBjeT0iMC41IiByPSIwLjQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNiZmYyZmYiLz48c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iIzAwOTZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNTVhYSIvPjwvcmFkaWFsR3JhZGllbnQ+PGZpbHRlciBpZD0iZjEiIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPjxmZUdhdXNzaWFuQmx1ciBpbj0iU291cmNlQWxwaGEiIHN0ZERldmlhdGlvbj0iMiIvPjxmZU9mZnNldCBkeD0iMiIgZHk9IjIiLz48ZmVDb21wb25lbnRUcmFuc2ZlciByZXN1bHQ9InNoYWRvdyI+PGZlRnVuY0EgdHlwZT0ibGluZWFyIiBzbG9wZT0iMC4yIi8+PC9mZUNvbXBvbmVudFRyYW5zZmVyPjxmZU1lcmdlPjxmZU1lcmdlTm9kZS8+PGZlTWVyZ2VOb2RlIGluPSJTb3VyY2VHcmFwaGljIi8+PC9mZU1lcmdlPjwvZmlsdGVyPjwvZGVmcz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0idXJsKCNnMSkiIGZpbHRlcj0idXJsKCNmMSkiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0idXJsKCNnMikiIHN0cm9rZT0iIzAwODhjYyIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAzMzY2IiBzdHJva2Utd2lkdGg9IjAuNSIgc3Ryb2tlLWRhc2hhcnJheT0iMSwyIi8+PHBhdGggZD0iTTUwLDIwIHY2MCBNMjAsNTAgaDYwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDMzNjYiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHRleHQgeD0iNTAiIHk9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAzMzY2Ij4kPC90ZXh0PjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjE1IiBmaWxsPSJ1cmwoI2cyKSIgc3Ryb2tlPSIjMDAzMzY2IiBzdHJva2Utd2lkdGg9IjAuNSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDMzNjYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtZGFzaGFycmF5PSIxLDEiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIzIiBmaWxsPSIjYmZmMmZmIiBvcGFjaXR5PSIwLjciLz48L3N2Zz4=');
+                background-size: contain;
+                opacity: 0.9;
+                animation: coinFall linear forwards;
+                filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.3));
+            }
+            
+            /* הוספת הבזקי אור על המטבעות */
+            .chinese-coin::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%);
+                animation: coinShine 2s infinite;
+            }
+            
+            @keyframes coinShine {
+                0%, 100% { opacity: 0.1; }
+                50% { opacity: 0.3; }
+            }
+            
+            @keyframes coinFall {
+                0% {
+                    transform: translateY(-50px) rotate(0deg) rotateY(0deg);
+                    opacity: 1;
+                }
+                25% {
+                    transform: translateY(calc(25vh)) rotate(90deg) rotateY(180deg);
+                }
+                50% {
+                    transform: translateY(calc(50vh)) rotate(180deg) rotateY(0deg);
+                }
+                75% {
+                    transform: translateY(calc(75vh)) rotate(270deg) rotateY(180deg);
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(calc(100vh + 50px)) rotate(360deg) rotateY(0deg);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes pulse {
+                0% { opacity: 0.3; transform: scale(0.95) rotate(var(--rotate, 0deg)); }
+                50% { opacity: 0.7; transform: scale(1.05) rotate(var(--rotate, 0deg)); }
+                100% { opacity: 0.3; transform: scale(0.95) rotate(var(--rotate, 0deg)); }
+            }
+            
+            .chinese-corner.top-left {
+                top: 10px;
+                left: 10px;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTEsMSBMNDksMSBMMSw0OSBMMSwxIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTEwLDEwIEwzMCwxMCBMMTAsMzAgTDEwLDEwIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+');
+                --rotate: 0deg;
+            }
+            
+            .chinese-corner.top-right {
+                top: 10px;
+                right: 10px;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTEsMSBMNDksMSBMMSw0OSBMMSwxIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTEwLDEwIEwzMCwxMCBMMTAsMzAgTDEwLDEwIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+');
+                --rotate: 90deg;
+            }
+            
+            .chinese-corner.bottom-left {
+                bottom: 10px;
+                left: 10px;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTEsMSBMNDksMSBMMSw0OSBMMSwxIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTEwLDEwIEwzMCwxMCBMMTAsMzAgTDEwLDEwIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+');
+                --rotate: 270deg;
+            }
+            
+            .chinese-corner.bottom-right {
+                bottom: 10px;
+                right: 10px;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTEsMSBMNDksMSBMMSw0OSBMMSwxIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTEwLDEwIEwzMCwxMCBMMTAsMzAgTDEwLDEwIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwOTZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+');
+                --rotate: 180deg;
+            }
+            
+            /* עיצוב אייקונים סיניים */
+            .chinese-icon {
+                font-size: 0.8em;
+                color: #ffcc00;
+                margin: 0 10px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            
+            /* עיצוב כותרות עם קישוט סיני */
+            section h2 {
+                position: relative;
+                padding-bottom: 15px;
+            }
+            
+            section h2:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, #ffcc00, transparent);
+            }
+            
+            section h2:before {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 10px;
+                height: 10px;
+                background: #ffcc00;
+                border-radius: 50%;
+                z-index: 1;
+            }
+            
+            /* עיצוב כפתור צף של וואטסאפ */
+            .whatsapp-float {
+                position: fixed;
+                bottom: 30px;
+                left: 30px;
+                width: 60px;
+                height: 60px;
+                background-color: #25D366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s;
+                animation: pulse 2s infinite;
+            }
+            
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .whatsapp-icon {
+                width: 36px;
+                height: 36px;
+            }
+            
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                }
+                70% {
+                    transform: scale(1.1);
+                    box-shadow: 0 0 20px rgba(0, 136, 204, 0.6);
+                }
+                100% {
+                    transform: scale(1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                }
+            }
+            
+            /* שיפורים נוספים למובייל */
+            @media (max-width: 768px) {
+                /* הגדלת אזורי לחיצה */
+                button, a, input[type="submit"] {
+                    min-height: 44px;
+                    min-width: 44px;
+                }
+                
+                /* מניעת זום */
+                body {
+                    touch-action: pan-x pan-y;
+                }
+                
+                /* שיפור הפרשי גודל בין אלמנטים ללחיצה קלה יותר */
+                .form-group input,
+                .form-group textarea,
+                .form-group select {
+                    margin-bottom: 5px;
+                }
+                
+                /* שיפור הגלילה */
+                html, body {
+                    overflow-x: hidden;
+                    -webkit-overflow-scrolling: touch;
+                }
+                
+                /* הגדלת כפתורים בטופס */
+                .submit-btn {
+                    padding: 15px 30px;
+                    font-size: 1.2em;
+                    width: 100%;
+                    max-width: 250px;
+                }
+            }
+        </style>
+
+        <!-- עיצוב CSS - רקע שקוף והנפשות -->
+        <style>
+            .intro-container {
+                background: rgba(255, 255, 255, 0.1); /* רקע שקוף */
+                backdrop-filter: blur(8px); /* טשטוש קל */
+                color: white; /* טקסט בצבע לבן */
+                padding: 20px;
+                border-radius: 15px;
+                text-align: center;
+                max-width: 600px;
+                margin: 30px auto;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInSlideUp 1.5s ease-out forwards;
+            }
+
+            .intro-container h2 {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+                opacity: 0;
+                animation: fadeIn 1s ease-in-out 0.5s forwards;
+            }
+
+            .intro-container p {
+                font-size: 1.1em;
+                line-height: 1.6;
+                opacity: 0;
+                animation: fadeIn 1s ease-in-out 0.8s forwards;
+            }
+
+            .highlight-text {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #0088cc; /* זהב */
+                opacity: 0;
+                animation: fadeIn 1s ease-in-out 1s forwards;
+            }
+
+            /* עיצוב אזור השירותים */
+            .services {
+                padding: 40px 0;
+                text-align: center;
+            }
+
+            .services h2 {
+                font-size: 2em;
+                margin-bottom: 30px;
+                position: relative;
+                display: inline-block;
+            }
+
+            .services h2:after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #0088cc, transparent);
+                bottom: -10px;
+                left: 25%;
+            }
+
+            .services-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                margin-top: 30px;
+            }
+
+            .service-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px);
+                border-radius: 15px;
+                padding: 25px 20px;
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                animation: fadeIn 0.8s ease-in-out forwards;
+                animation-delay: calc(0.2s * var(--i, 1));
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .service-icon {
+                font-size: 2.5em;
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.3em;
+                margin-bottom: 15px;
+                color: #0088cc;
+            }
+
+            .service-card p {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+
+            @keyframes fadeInSlideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            
+            /* עיצוב אזור היתרונות */
+            .benefits {
+                padding: 60px 0;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .benefits::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHBhdGggZD0iTTEyMCw4MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxMjAsODAsMTIwLDgwWk0xMTAsNzVjMCwwLDMtMSwzLTNzLTEtMy0zLTNzLTMsMS0zLDNTMTEwLDc1LDExMCw3NVpNMTAwLDcwYzAsMCwzLTEsMy0zcy0xLTMtMy0zcy0zLDEtMywzUzEwMCw3MCwxMDAsNzBaTTkwLDY1YzAsMCwzLTEsMy0zcy0xLTMtMy0zcy0zLDEtMywzUzkwLDY1LDkwLDY1Wk04MCw2MGMwLDAsMy0xLDMtM3MtMS0zLTMtM3MtMywxLTMsM1M4MCw2MCw4MCw2MFpNNzAsNTVjMCwwLDMtMSwzLTNzLTEtMy0zLTNzLTMsMS0zLDNTNzAsNTUsNzAsNTVaTTYwLDUwYzAsMCwzLTEsMy0zcy0xLTMtMy0zcy0zLDEtMywzUzYwLDUwLDYwLDUwWk01MCw0NWMwLDAsMy0xLDMtM3MtMS0zLTMtM3MtMywxLTMsM1M1MCw0NSw1MCw0NVpNNDAsNDBjMCwwLDMtMSwzLTNzLTEtMy0zLTNzLTMsMS0zLDNTNDAsNDAsNDAsNDBaTTMwLDM1YzAsMCwzLTEsMy0zcy0xLTMtMy0zcy0zLDEtMywzUzMwLDM1LDMwLDM1Wk0yMCwzMGMwLDAsMy0xLDMtM3MtMS0zLTMtM3MtMywxLTMsM1MyMCwzMCwyMCwzMFpNMTMwLDg1YzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzEzMCw4NSwxMzAsODVaTTE0MCw5MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxNDAsOTAsMTQwLDkwWk0xNTAsOTVjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMTUwLDk1LDE1MCw5NVpNMTYwLDEwMGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxNjAsMTAwLDE2MCwxMDBaTTE3MCwxMDVjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMTcwLDEwNSwxNzAsMTA1Wk0xODAsMTEwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzE4MCwxMTAsMTgwLDExMFpNMTcwLDEyMGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxNzAsMTIwLDE3MCwxMjBaTTE2MCwxMzBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMTYwLDEzMCwxNjAsMTMwWk0xNTAsMTQwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzE1MCwxNDAsMTUwLDE0MFpNMTQwLDE1MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxNDAsMTUwLDE0MCwxNTBaTTEzMCwxNjBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMTMwLDE2MCwxMzAsMTYwWk0xMjAsMTcwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzEyMCwxNzAsMTIwLDE3MFpNMTEwLDE4MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxMTAsMTgwLDExMCwxODBaTTEwMCwxNzBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMTAwLDE3MCwxMDAsMTcwWk05MCwxNjBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTOTAsMTYwLDkwLDE2MFpNODAsMTUwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzgwLDE1MCw4MCwxNTBaTTcwLDE0MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVM3MCwxNDAsNzAsMTQwWk02MCwxMzBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTNjAsMTMwLDYwLDEzMFpNNTAsMTIwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzUwLDEyMCw1MCwxMjBaTTQwLDExMGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVM0MCwxMTAsNDAsMTEwWk0zMCwxMDBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMzAsMTAwLDMwLDEwMFpNMjAsOTBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMjAsOTAsMjAsOTBaTTEwLDgwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzEwLDgwLDEwLDgwWk0xMCw3MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxMCw3MCwxMCw3MFpNMTAsNjBjMCwwLDUtMiw1LTVzLTItNS01LTVzLTUsMi01LDVTMTAsNjAsMTAsNjBaTTEwLDUwYzAsMCw1LTIsNS01cy0yLTUtNS01cy01LDItNSw1UzEwLDUwLDEwLDUwWk0xMCw0MGMwLDAsNS0yLDUtNXMtMi01LTUtNXMtNSwyLTUsNVMxMCw0MCwxMCw0MFoiIGZpbGw9IiNmZmNjMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
+                opacity: 0.2;
+                z-index: -1;
+            }
+            
+            .benefits-container {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .benefits-text {
+                flex: 1;
+                min-width: 300px;
+                padding: 0 20px;
+            }
+            
+            .benefits-text h2 {
+                font-size: 2em;
+                margin-bottom: 30px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .benefits-text h2:after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #0088cc, transparent);
+                bottom: -10px;
+                left: 25%;
+            }
+            
+            .benefits-list {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .benefits-list li {
+                display: flex;
+                margin-bottom: 25px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px);
+                border-radius: 10px;
+                padding: 15px;
+                transition: transform 0.3s, box-shadow 0.3s;
+                opacity: 0;
+                animation: fadeInRight 0.8s ease-in-out forwards;
+                animation-delay: calc(0.2s * var(--i, 1));
+            }
+            
+            .benefits-list li:nth-child(1) { --i: 1; }
+            .benefits-list li:nth-child(2) { --i: 2; }
+            .benefits-list li:nth-child(3) { --i: 3; }
+            .benefits-list li:nth-child(4) { --i: 4; }
+            
+            .benefits-list li:hover {
+                transform: translateX(-10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            .benefit-icon {
+                font-size: 1.8em;
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .benefit-content h3 {
+                font-size: 1.2em;
+                margin-bottom: 8px;
+                color: #0088cc;
+            }
+            
+            .benefit-content p {
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+            
+            .benefits-image {
+                flex: 1;
+                min-width: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            
+            .image-container {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .globe-effect {
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                background: radial-gradient(circle at 30% 30%, #4b6cb7, #182848);
+                position: relative;
+                box-shadow: 0 0 30px rgba(75, 108, 183, 0.7);
+                animation: rotate 20s linear infinite;
+            }
+            
+            .globe-effect:before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border-radius: 50%;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-top: 2px solid #0088cc;
+                border-right: 2px solid transparent;
+                animation: rotate 10s linear infinite;
+            }
+            
+            .globe-effect:after {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: -20px;
+                right: -20px;
+                bottom: -20px;
+                border-radius: 50%;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-bottom: 2px solid #0088cc;
+                border-left: 2px solid transparent;
+                animation: rotate 15s linear infinite reverse;
+            }
+            
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            
+            @keyframes fadeInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            /* עיצוב רספונסיבי */
+            @media (max-width: 768px) {
+                .benefits-container {
+                    flex-direction: column;
+                }
+                
+                .benefits-text, .benefits-image {
+                    width: 100%;
+                }
+                
+                .benefits-image {
+                    margin-top: 40px;
+                }
+                
+                .services-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            /* עיצוב טופס צור קשר */
+            .contact {
+                padding: 60px 0;
+                text-align: center;
+            }
+            
+            .contact h2 {
+                font-size: 2em;
+                margin-bottom: 30px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .contact h2:after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #0088cc, transparent);
+                bottom: -10px;
+                left: 25%;
+            }
+            
+            .contact-form {
+                max-width: 600px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px);
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+                text-align: right;
+            }
+            
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+            
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                width: 100%;
+                padding: 12px 15px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                color: white;
+                font-size: 1em;
+                transition: all 0.3s;
+            }
+            
+            .form-group input:focus,
+            .form-group textarea:focus,
+            .form-group select:focus {
+                outline: none;
+                border-color: #f1c40f;
+                box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+            }
+            
+            .form-group textarea {
+                min-height: 120px;
+                resize: vertical;
+            }
+            
+            .form-group select {
+                appearance: none;
+                background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+            }
+            
+            .submit-btn {
+                background: linear-gradient(45deg, #0055aa, #0088cc);
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 50px;
+                font-size: 1.1em;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s;
+                box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+                display: inline-block;
+                margin-top: 10px;
+            }
+            
+            .submit-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(241, 196, 15, 0.6);
+            }
+            
+            .submit-btn:active {
+                transform: translateY(1px);
+            }
+            
+            /* עיצוב פוטר */
+            footer {
+                background: rgba(0, 0, 0, 0.3);
+                padding: 30px 0;
+                text-align: center;
+                margin-top: 40px;
+            }
+            
+            .footer-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            
+            .footer-section {
+                flex: 1;
+                min-width: 250px;
+                margin-bottom: 20px;
+                text-align: right;
+            }
+            
+            .footer-section h3 {
+                color: #0088cc;
+                margin-bottom: 15px;
+                font-size: 1.3em;
+            }
+            
+            .footer-section p,
+            .footer-section a {
+                color: white;
+                margin-bottom: 10px;
+                display: block;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            
+            .footer-section a:hover {
+                color: #0088cc;
+            }
+            
+            .social-icons {
+                display: flex;
+                gap: 15px;
+                margin-top: 15px;
+            }
+            
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s;
+            }
+            
+            .social-icons a:hover {
+                background: #f1c40f;
+                transform: translateY(-5px);
+            }
+            
+            .copyright {
+                width: 100%;
+                text-align: center;
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.9em;
+            }
+        </style>
+
